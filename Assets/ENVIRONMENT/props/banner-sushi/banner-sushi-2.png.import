@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg4u17dafb3k5"
-path="res://.godot/imported/banner-sushi-2.png-f39c166a4a06ad39957a20b5ce246f9d.ctex"
+path="res://.godot/imported/banner-sushi-2.png-c3de36b96a7e35514652305a4c38e564.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/props/banner-sushi/banner-sushi-2.png"
-dest_files=["res://.godot/imported/banner-sushi-2.png-f39c166a4a06ad39957a20b5ce246f9d.ctex"]
+source_file="res://Assets/environment/props/banner-sushi/banner-sushi-2.png"
+dest_files=["res://.godot/imported/banner-sushi-2.png-c3de36b96a7e35514652305a4c38e564.ctex"]
 
 [params]
 

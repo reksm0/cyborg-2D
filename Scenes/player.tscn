@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dludvu4tnuegn"]
+[gd_scene format=3 uid="uid://b67kci4ejpk7m"]
 
 [ext_resource type="Script" uid="uid://da4kpsjp3nmc5" path="res://Scripts/player.gd" id="1_3smsa"]
 [ext_resource type="Texture2D" uid="uid://b7w3d1gqopc3x" path="res://Assets/manami's assets/SPRITESHEETS/player/crouch.png" id="2_8erm5"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b7ww3snbcu71" path="res://Assets/manami's assets/SPRITESHEETS/player/walk.png" id="7_ukyrk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smsa"]
-radius = 43.5
-height = 336.0
+radius = 66.0
+height = 322.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwjto"]
 atlas = ExtResource("2_8erm5")
@@ -290,32 +290,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3smsa"]
-distance = -310.0
-
-[node name="player" type="Node2D" unique_id=1152549977]
-
-[node name="player" type="CharacterBody2D" parent="." unique_id=892315194]
+[node name="player" type="CharacterBody2D" unique_id=1760406672]
+position = Vector2(601, 283)
 script = ExtResource("1_3smsa")
+metadata/_edit_group_ = true
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=204344888]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=502275676]
-position = Vector2(11, 71)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1836328658]
+position = Vector2(17, 73)
 shape = SubResource("CapsuleShape2D_3smsa")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player" unique_id=353605804]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1776301266]
 position = Vector2(-2, -4)
 scale = Vector2(7.3776407, 7.10168)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.70020634
-
-[node name="staticbody" type="StaticBody2D" parent="." unique_id=618972830]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="staticbody" unique_id=139126485]
-shape = SubResource("WorldBoundaryShape2D_3smsa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1089936327]
-shape = SubResource("WorldBoundaryShape2D_3smsa")

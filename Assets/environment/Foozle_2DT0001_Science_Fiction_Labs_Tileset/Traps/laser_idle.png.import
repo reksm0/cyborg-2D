@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5alp5m3muvvi"
-path="res://.godot/imported/laser_idle.png-f7e6c32d265e8470b1df52b07e8b7d1d.ctex"
+path="res://.godot/imported/laser_idle.png-074cf89ca39f969e793f0bf0a20e7d83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_idle.png"
-dest_files=["res://.godot/imported/laser_idle.png-f7e6c32d265e8470b1df52b07e8b7d1d.ctex"]
+source_file="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_idle.png"
+dest_files=["res://.godot/imported/laser_idle.png-074cf89ca39f969e793f0bf0a20e7d83.ctex"]
 
 [params]
 

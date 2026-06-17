@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci01xusyxme5p"
-path="res://.godot/imported/control-box-1.png-33ed8014a512c02ef97123f6ca21bc33.ctex"
+path="res://.godot/imported/control-box-1.png-e647fbe56b0c6371285d94a33a315e96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/props/control-box-1.png"
-dest_files=["res://.godot/imported/control-box-1.png-33ed8014a512c02ef97123f6ca21bc33.ctex"]
+source_file="res://Assets/environment/props/control-box-1.png"
+dest_files=["res://.godot/imported/control-box-1.png-e647fbe56b0c6371285d94a33a315e96.ctex"]
 
 [params]
 

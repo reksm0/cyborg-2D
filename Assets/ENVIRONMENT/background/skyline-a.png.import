@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3ldcb46s6q2x"
-path="res://.godot/imported/skyline-a.png-0187a1c06d0f83b6170d615254f8b43f.ctex"
+path="res://.godot/imported/skyline-a.png-34c981697b2fb44b32dfc0bfdcdb93a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/background/skyline-a.png"
-dest_files=["res://.godot/imported/skyline-a.png-0187a1c06d0f83b6170d615254f8b43f.ctex"]
+source_file="res://Assets/environment/background/skyline-a.png"
+dest_files=["res://.godot/imported/skyline-a.png-34c981697b2fb44b32dfc0bfdcdb93a6.ctex"]
 
 [params]
 

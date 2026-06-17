@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2vovldqf2ua2"
-path="res://.godot/imported/tile080.png-fe356c9209b3d91049acaae5750057b5.ctex"
+path="res://.godot/imported/tile080.png-3ff1ba27daf3913d8d777485b16f48fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile080.png"
-dest_files=["res://.godot/imported/tile080.png-fe356c9209b3d91049acaae5750057b5.ctex"]
+source_file="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/Individual_PNGs/Level_Tileset/tile080.png"
+dest_files=["res://.godot/imported/tile080.png-3ff1ba27daf3913d8d777485b16f48fd.ctex"]
 
 [params]
 

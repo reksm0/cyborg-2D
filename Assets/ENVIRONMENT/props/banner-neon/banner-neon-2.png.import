@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bahc17f74kuvq"
-path="res://.godot/imported/banner-neon-2.png-c90150e05b54778809289bb620cc044f.ctex"
+path="res://.godot/imported/banner-neon-2.png-623578a0d16c8362797f0df92e2e9e70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/props/banner-neon/banner-neon-2.png"
-dest_files=["res://.godot/imported/banner-neon-2.png-c90150e05b54778809289bb620cc044f.ctex"]
+source_file="res://Assets/environment/props/banner-neon/banner-neon-2.png"
+dest_files=["res://.godot/imported/banner-neon-2.png-623578a0d16c8362797f0df92e2e9e70.ctex"]
 
 [params]
 

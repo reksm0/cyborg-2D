@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coswaanldkr2k"
-path="res://.godot/imported/banner-coke-2.png-fa5e2d4c213d74aec5c420e94ba14e45.ctex"
+path="res://.godot/imported/banner-coke-2.png-f3996b6e71711a9cb34ba1114edfdddf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/props/banner-coke/banner-coke-2.png"
-dest_files=["res://.godot/imported/banner-coke-2.png-fa5e2d4c213d74aec5c420e94ba14e45.ctex"]
+source_file="res://Assets/environment/props/banner-coke/banner-coke-2.png"
+dest_files=["res://.godot/imported/banner-coke-2.png-f3996b6e71711a9cb34ba1114edfdddf.ctex"]
 
 [params]
 

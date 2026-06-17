@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yhdgns7lpp1d"
-path="res://.godot/imported/hotel-sign.png-406fa1d3cbf9e8c8545f566cdfd4906a.ctex"
+path="res://.godot/imported/hotel-sign.png-c1cfee5ca5746e3925e8459a8f1ed8d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/props/hotel-sign.png"
-dest_files=["res://.godot/imported/hotel-sign.png-406fa1d3cbf9e8c8545f566cdfd4906a.ctex"]
+source_file="res://Assets/environment/props/hotel-sign.png"
+dest_files=["res://.godot/imported/hotel-sign.png-c1cfee5ca5746e3925e8459a8f1ed8d3.ctex"]
 
 [params]
 

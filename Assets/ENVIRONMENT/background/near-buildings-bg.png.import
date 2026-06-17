@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdw0lijuw2uq"
-path="res://.godot/imported/near-buildings-bg.png-7d5fee25fd09663c5b3e2841dcc534f5.ctex"
+path="res://.godot/imported/near-buildings-bg.png-469f2ae5e6e3a35b582a0e50b4b6e2e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/background/near-buildings-bg.png"
-dest_files=["res://.godot/imported/near-buildings-bg.png-7d5fee25fd09663c5b3e2841dcc534f5.ctex"]
+source_file="res://Assets/environment/background/near-buildings-bg.png"
+dest_files=["res://.godot/imported/near-buildings-bg.png-469f2ae5e6e3a35b582a0e50b4b6e2e6.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btr80p7pndqid"
-path="res://.godot/imported/monitor-face-3.png-8d2ba44063b12b3744fbef3961475e10.ctex"
+path="res://.godot/imported/monitor-face-3.png-1f8dc29ca222ce6b143ab5183bab185c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/props/monitorface/monitor-face-3.png"
-dest_files=["res://.godot/imported/monitor-face-3.png-8d2ba44063b12b3744fbef3961475e10.ctex"]
+source_file="res://Assets/environment/props/monitorface/monitor-face-3.png"
+dest_files=["res://.godot/imported/monitor-face-3.png-1f8dc29ca222ce6b143ab5183bab185c.ctex"]
 
 [params]
 
