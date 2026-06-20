@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Cyborg"
+<<<<<<< HEAD
+run/main_scene="uid://nh8wiw0nharr"
+=======
 run/main_scene="res://Scenes/player.tscn"
+>>>>>>> d224a99adce2be5746b37f61e01485c362fb415c
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

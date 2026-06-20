@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bya62gvliugli" path="res://images.jpg" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
-size = Vector2(68, 44)
+size = Vector2(67, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
 atlas = ExtResource("2_4gyqm")
@@ -12,31 +12,67 @@ region = Rect2(204, 45, 68, 45)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iifgy"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"take_damage",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qi2p4")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walk",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 90.0
 
 [node name="GroundEnemy" type="CharacterBody2D" unique_id=1920386209]
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491324122]
-position = Vector2(2, 1)
+position = Vector2(1.5, 5)
 shape = SubResource("RectangleShape2D_iifgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=124593592]
 position = Vector2(2, 1)
 sprite_frames = SubResource("SpriteFrames_iifgy")
+animation = &"walk"
+autoplay = "walk"
 
-[node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D" unique_id=1997111485]
-position = Vector2(-2, -1)
-target_position = Vector2(-67, 0)
+[node name="Range" type="Area2D" parent="." unique_id=156311337]
+collision_layer = 0
 
-[node name="Timer" type="Timer" parent="." unique_id=839303043]
-one_shot = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=740966109]
+shape = SubResource("CircleShape2D_4gyqm")
+debug_color = Color(0.5208973, 0.56206846, 0.34421515, 0.41960785)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="RayY" type="RayCast2D" parent="." unique_id=1997111485]
+position = Vector2(37, 1)
+target_position = Vector2(0, 47)
+
+[node name="RayX" type="RayCast2D" parent="." unique_id=1723720455]
+target_position = Vector2(50, 0)
+
+[node name="VisionRay" type="RayCast2D" parent="." unique_id=238082354]
+position = Vector2(0, -20)
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
