@@ -11,18 +11,9 @@ config_version=5
 [application]
 
 config/name="Cyborg"
-<<<<<<< HEAD
 run/main_scene="uid://nh8wiw0nharr"
-=======
-run/main_scene="res://Scenes/player.tscn"
->>>>>>> d224a99adce2be5746b37f61e01485c362fb415c
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 
 [physics]
 
@@ -30,5 +21,4 @@ window/size/viewport_height=1080
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
