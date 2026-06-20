@@ -290,8 +290,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="CharacterBody2D" unique_id=1760406672]
+[node name="player" type="CharacterBody2D" unique_id=1760406672 groups=["player"]]
 position = Vector2(601, 283)
+collision_layer = 2
 script = ExtResource("1_3smsa")
 metadata/_edit_group_ = true
 
@@ -305,3 +306,4 @@ scale = Vector2(7.3776407, 7.10168)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.52681154

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://Scenes/player.tscn" id="2_go701"]
 [ext_resource type="Texture2D" uid="uid://bnd6yn1ru7ljh" path="res://Assets/environment/computer.png" id="3_8j60k"]
 [ext_resource type="PackedScene" uid="uid://b4jvqu2tgn5ov" path="res://Scenes/laser barrier.tscn" id="4_fo5ed"]
-[ext_resource type="PackedScene" uid="uid://dgmwlmvjr8o8d" path="res://Scenes/control_panel.tscn" id="5_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://dgmwlmvjr8o8d" path="res://Scenes/control  panel.tscn" id="5_5ukr8"]
 [ext_resource type="Texture2D" uid="uid://nmc86ruf8hqg" path="res://Assets/environment/boxes_3.png" id="7_o06y3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_go701"]
@@ -166,13 +166,13 @@ region_rect = Rect2(0, 38.748276, 32.457047, 27.253593)
 [node name="Interactable Decors" type="Node2D" parent="." unique_id=824364438]
 metadata/_edit_group_ = true
 
-[node name="StaticBody2D" parent="Interactable Decors" unique_id=645716432 instance=ExtResource("4_fo5ed")]
+[node name="Laser barrier" parent="Interactable Decors" unique_id=645716432 instance=ExtResource("4_fo5ed")]
 position = Vector2(911.72, 336)
 scale = Vector2(1.5, 1.5)
 
 [node name="Control panel" parent="Interactable Decors" unique_id=966204719 instance=ExtResource("5_5ukr8")]
 position = Vector2(725, 352)
-scale = Vector2(2, 2)
+scale = Vector2(0.5, 0.5)
 
 [node name="Breakable Decor" type="Node2D" parent="." unique_id=1028305071]
 
@@ -198,3 +198,5 @@ position_smoothing_speed = 7.0
 [node name="Awakening room walls" type="TileMapLayer" parent="." unique_id=1990676992]
 tile_map_data = PackedByteArray("AAAAAAwAAQABAAAAAAABAAwAAQACAAAAAAACAAwAAQABAAAAAAADAAwAAQACAAAAAAAEAAwAAQABAAAAAAAFAAwAAQACAAAAAAAGAAwAAQABAAAAAAAHAAwAAQACAAAAAAAIAAwAAQABAAAAAAAJAAwAAQACAAAAAAAKAAwAAQABAAAAAAALAAwAAQACAAAAAAAMAAwAAQABAAAAAAANAAwAAQACAAAAAAAOAAwAAQABAAAAAAAPAAwAAQACAAAAAAAQAAwAAQABAAAAAAARAAwAAQACAAAAAAASAAwAAQABAAAAAAATAAwAAQACAAAAAAAUAAwAAQABAAAAAAAVAAwAAQACAAAAAAAWAAwAAQABAAAAAAAXAAwAAQACAAAAAAAYAAwAAQABAAAAAAAZAAwAAQACAAAAAAAaAAwAAQABAAAAAAAbAAwAAQACAAAAAAD//woAAQADAAEAAAD//wsAAQADAAIAAAD//wgAAQADAAEAAAD//wkAAQADAAIAAAD//wYAAQADAAEAAAD//wcAAQADAAIAAAD//wQAAQADAAEAAAD//wUAAQADAAIAAAD//wIAAQADAAEAAAD//wMAAQADAAIAAAD//wAAAQADAAEAAAD//wEAAQADAAIAAAD//wwAAQAEAAQAAAAbAAcAAQAAAAIAAAAbAAYAAQAAAAEAAAAbAAUAAQAAAAIAAAAbAAQAAQAAAAEAAAAbAAMAAQAAAAIAAAAbAAIAAQAAAAEAAAAbAAEAAQAAAAIAAAAbAAAAAQAAAAEAAAAAAP//AQABAAMAAAABAP//AQACAAMAAAACAP//AQABAAMAAAADAP//AQACAAMAAAAEAP//AQABAAMAAAAFAP//AQACAAMAAAAGAP//AQABAAMAAAAHAP//AQACAAMAAAAIAP//AQABAAMAAAAJAP//AQACAAMAAAAKAP//AQABAAMAAAALAP//AQACAAMAAAAMAP//AQABAAMAAAANAP//AQACAAMAAAAOAP//AQABAAMAAAAPAP//AQACAAMAAAAQAP//AQABAAMAAAARAP//AQACAAMAAAASAP//AQABAAMAAAATAP//AQACAAMAAAAUAP//AQABAAMAAAAVAP//AQACAAMAAAAWAP//AQABAAMAAAAXAP//AQACAAMAAAAYAP//AQABAAMAAAAZAP//AQACAAMAAAAaAP//AQABAAMAAAD/////AQAEAAMAAAAbAP//AQAFAAMAAAAbAAgAAQAAAAMAAAAcAAwAAQABAAAAAAAcAAgAAQACAAMAAAAcAAcAAQAHAAEAAFAcAAYAAQAFAAIAAFAcAAMAAQAHAAEAAFAcAAQAAQAGAAIAAFAcAAUAAQAGAAIAAFAcAAIAAQAGAAIAAFAcAAAAAQAFAAIAAAAcAAEAAQAFAAIAAAAdAAgAAQADAAMAAAAdAAYAAQADAAEAAAAdAAcAAQADAAIAAAAdAAQAAQADAAEAAAAdAAUAAQADAAIAAAAdAAIAAQADAAEAAAAdAAMAAQADAAIAAAAdAAAAAQADAAEAAAAdAAEAAQADAAIAAAAeAP//AQACAAMAAAAdAP//AQAEAAMAAAAcAP//AQAGAAEAAAAdAAwAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_5a7ea")
+
+[connection signal="hacked_successfully" from="Interactable Decors/Control panel" to="Interactable Decors/Laser barrier" method="_on_control_panel_hacked_successfully"]

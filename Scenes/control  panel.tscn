@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dgmwlmvjr8o8d"]
 
+[ext_resource type="Script" uid="uid://bhfaghi4bytvj" path="res://Scripts/control panel.gd" id="1_23m4l"]
 [ext_resource type="Texture2D" uid="uid://d0vrkex0ubum6" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_idle.png" id="1_84xqn"]
 [ext_resource type="Texture2D" uid="uid://3nk6bucgenf0" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_deactivate.png" id="1_af86p"]
 
@@ -296,9 +297,33 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_af86p"]
+size = Vector2(221, 145)
+
 [node name="Control panel" type="Node2D" unique_id=966204719]
+script = ExtResource("1_23m4l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=607051063]
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1j2ri")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=210932701]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=616736668]
+position = Vector2(-4.5, -8.5)
+shape = SubResource("RectangleShape2D_af86p")
+
+[node name="Label" type="Label" parent="." unique_id=389255059]
+offset_left = -46.0
+offset_top = -81.0
+offset_right = 47.0
+offset_bottom = -47.0
+theme_override_font_sizes/font_size = 24
+text = "[E] Hack"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
