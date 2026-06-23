@@ -164,6 +164,7 @@ texture = ExtResource("3_wak7s")
 region_rect = Rect2(0, 38.748276, 32.457047, 27.253593)
 
 [node name="Interactable Decors" type="Node2D" parent="." unique_id=824364438]
+metadata/_edit_group_ = true
 
 [node name="Control panel" parent="Interactable Decors" unique_id=966204719 instance=ExtResource("4_hc2e5")]
 position = Vector2(725, 352)
@@ -181,11 +182,12 @@ scale = Vector2(0.175, 0.175)
 texture = ExtResource("6_xwuxv")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("7_xg5iv")]
-position = Vector2(396, 336)
-scale = Vector2(0.205, 0.205)
+position = Vector2(419, 336)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1982995415]
-position = Vector2(0, -219.5122)
+position = Vector2(0, -34)
 zoom = Vector2(4, 4)
 limit_left = -32
 limit_top = -32

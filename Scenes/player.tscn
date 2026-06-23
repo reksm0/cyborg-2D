@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://b7ww3snbcu71" path="res://Assets/manami's assets/SPRITESHEETS/player/walk.png" id="7_ukyrk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smsa"]
-radius = 66.0
-height = 322.0
+radius = 8.0
+height = 50.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
 atlas = ExtResource("2_f1ek2")
@@ -385,13 +385,12 @@ collision_layer = 2
 script = ExtResource("1_3smsa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1836328658]
-position = Vector2(17, 73)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_3smsa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1776301266]
 position = Vector2(-2, -4)
-scale = Vector2(7.3776407, 7.10168)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.6555307
+frame_progress = 0.92911583
