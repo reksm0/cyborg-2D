@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwq7qma840ae2"
-path="res://.godot/imported/tile001.png-3e08c3850360b5b94045f2ee06aa1b63.ctex"
+path="res://.godot/imported/tile001.png-3e1ab771f627e31cc9c9116d629f53fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/Individual_PNGs/laser_turret/tile001.png"
-dest_files=["res://.godot/imported/tile001.png-3e08c3850360b5b94045f2ee06aa1b63.ctex"]
+source_file="res://Assets/ENVIRONMENT/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/Individual_PNGs/laser_turret/tile001.png"
+dest_files=["res://.godot/imported/tile001.png-3e1ab771f627e31cc9c9116d629f53fe.ctex"]
 
 [params]
 

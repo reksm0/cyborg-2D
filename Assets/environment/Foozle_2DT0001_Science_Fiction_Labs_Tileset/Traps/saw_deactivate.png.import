@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dboqpgn1q1a61"
-path="res://.godot/imported/saw_deactivate.png-5fbbc1e71e202208dff80f23988e7a61.ctex"
+path="res://.godot/imported/saw_deactivate.png-9372359e4f41328031dffc28883d0e10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/saw_deactivate.png"
-dest_files=["res://.godot/imported/saw_deactivate.png-5fbbc1e71e202208dff80f23988e7a61.ctex"]
+source_file="res://Assets/ENVIRONMENT/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/saw_deactivate.png"
+dest_files=["res://.godot/imported/saw_deactivate.png-9372359e4f41328031dffc28883d0e10.ctex"]
 
 [params]
 
