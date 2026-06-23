@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4jvqu2tgn5ov"]
 
 [ext_resource type="Texture2D" uid="uid://consnllkmhgxt" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_deactivate.png" id="1_cjcgs"]
-[ext_resource type="Script" uid="uid://cux7y8pthekxj" path="res://Scripts/laser barrier.gd" id="1_f4ekb"]
+[ext_resource type="Script" uid="uid://cux7y8pthekxj" path="res://Scripts/laser_barrier.gd" id="1_f4ekb"]
 [ext_resource type="Texture2D" uid="uid://p78hlea3r2ic" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_idle.png" id="1_nxmxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mclmd"]

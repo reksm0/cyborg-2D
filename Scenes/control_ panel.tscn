@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgmwlmvjr8o8d"]
 
-[ext_resource type="Script" uid="uid://bhfaghi4bytvj" path="res://Scripts/control panel.gd" id="1_23m4l"]
+[ext_resource type="Script" uid="uid://bhfaghi4bytvj" path="res://Scripts/control_panel.gd" id="1_23m4l"]
 [ext_resource type="Texture2D" uid="uid://d0vrkex0ubum6" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_idle.png" id="1_84xqn"]
 [ext_resource type="Texture2D" uid="uid://3nk6bucgenf0" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_deactivate.png" id="1_af86p"]
 
