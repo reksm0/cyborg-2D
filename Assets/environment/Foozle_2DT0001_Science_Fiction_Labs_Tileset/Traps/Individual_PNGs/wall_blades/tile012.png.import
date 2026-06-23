@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce826dk1rrggl"
-path="res://.godot/imported/tile012.png-574846b08cb08472ccdb11a5b23d88f3.ctex"
+path="res://.godot/imported/tile012.png-c900752a156203517168921f252c4236.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/Individual_PNGs/wall_blades/tile012.png"
-dest_files=["res://.godot/imported/tile012.png-574846b08cb08472ccdb11a5b23d88f3.ctex"]
+source_file="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/Individual_PNGs/wall_blades/tile012.png"
+dest_files=["res://.godot/imported/tile012.png-c900752a156203517168921f252c4236.ctex"]
 
 [params]
 

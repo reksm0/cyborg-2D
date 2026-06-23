@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd535le4qyl4w"
-path="res://.godot/imported/tile019.png-9ba8da064b9c7b9efab1d3590ef4a3ee.ctex"
+path="res://.godot/imported/tile019.png-51204ad1797154384bb3c0eda8658476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ENVIRONMENT/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/Individual_PNGs/electric_turret/tile019.png"
-dest_files=["res://.godot/imported/tile019.png-9ba8da064b9c7b9efab1d3590ef4a3ee.ctex"]
+source_file="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/Individual_PNGs/electric_turret/tile019.png"
+dest_files=["res://.godot/imported/tile019.png-51204ad1797154384bb3c0eda8658476.ctex"]
 
 [params]
 
