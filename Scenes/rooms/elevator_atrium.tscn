@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d4aj67ge5qty4"]
 
-[ext_resource type="Texture2D" uid="uid://brxgaplrs5ubm" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_tqmbp"]
-[ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://Scenes/player.tscn" id="2_8k04d"]
+[ext_resource type="Texture2D" uid="uid://qcmjvbqkqjwj" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_tqmbp"]
+[ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://player/player_scene/player.tscn" id="2_8k04d"]
 [ext_resource type="PackedScene" uid="uid://d1dnodi3eokgc" path="res://Scenes/interactables/main_elevator.tscn" id="3_8k04d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynct0"]
