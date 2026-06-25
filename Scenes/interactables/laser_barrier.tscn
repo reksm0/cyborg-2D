@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4jvqu2tgn5ov"]
 
 [ext_resource type="Texture2D" uid="uid://consnllkmhgxt" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_deactivate.png" id="1_cjcgs"]
+[ext_resource type="Script" uid="uid://cux7y8pthekxj" path="res://Scripts/laser_barrier.gd" id="1_f4ekb"]
 [ext_resource type="Texture2D" uid="uid://p78hlea3r2ic" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_idle.png" id="1_nxmxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mclmd"]
@@ -205,7 +206,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4ybr8")
 }],
 "loop": false,
-"name": &"deactivate",
+"name": &"deactivated",
 "speed": 10.0
 }, {
 "frames": [{
@@ -273,11 +274,12 @@ size = Vector2(32, 64)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=645716432]
 position = Vector2(910, 535)
+script = ExtResource("1_f4ekb")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=218048233]
 sprite_frames = SubResource("SpriteFrames_mclmd")
-animation = &"idle"
+animation = &"deactivated"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027046558]

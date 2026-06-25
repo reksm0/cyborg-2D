@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d1dnodi3eokgc"]
+
+[ext_resource type="Script" uid="uid://bqf0xix2b7mre" path="res://Scripts/main_elevator.gd" id="1_xhhkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f5pf"]
+size = Vector2(96, 128)
+
+[node name="Main elevator" type="Node2D" unique_id=1368875976]
+script = ExtResource("1_xhhkf")
+
+[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="." unique_id=936173877]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=858424060]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1503715729]
+position = Vector2(-16, 0)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_4f5pf")
+
+[node name="Label" type="Label" parent="." unique_id=1589719239]
+offset_left = -176.0
+offset_top = -369.0
+offset_right = 161.0
+offset_bottom = -281.0
+theme_override_font_sizes/font_size = 64
+text = "[E] interact"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

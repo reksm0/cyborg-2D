@@ -22,6 +22,29 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	var input_axis := Input.get_axis("ui_left", "ui_right")
+var is_attacking = false
+
+func _physics_process(delta):
+
+	# Attack
+	if Input.is_action_just_pressed("attack") and !is_attacking:
+		start_attack()
+
+	# Prevent movement while attacking
+	if is_attacking:
+		move_and_slide()
+		return
+
+	# Gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	# Jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Movement
+	var input_axis = Input.get_axis("left", "right")
 
 	if input_axis:
 		velocity.x = input_axis * SPEED
@@ -35,6 +58,22 @@ func _physics_process(delta: float) -> void:
 
 
 func update_animations(input_axis: float) -> void:
+func start_attack():
+	is_attacking = true
+	velocity.x = 0
+
+	animated_sprite_2d.play("attack")
+
+	await animated_sprite_2d.animation_finished
+
+	is_attacking = false
+
+
+func update_animations(input_axis):
+
+	if is_attacking:
+		return
+
 	if input_axis > 0:
 		animated_sprite_2d.flip_h = false
 	elif input_axis < 0:
@@ -68,5 +107,8 @@ func die() -> void:
 
 
 func reset_player_position() -> void:
+
+
+func reset_player_position():
 	if global_position.y > 500:
 		global_position = Vector2(100, 100)
