@@ -11,7 +11,9 @@ var health := 5
 var knockback := Vector2.ZERO
 var is_attacking := false
 
-
+func _ready():
+	add_to_group("player")
+	
 func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
