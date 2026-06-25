@@ -9,22 +9,17 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var health := 5
 var knockback := Vector2.ZERO
+var is_attacking := false
 
 
 func _physics_process(delta: float) -> void:
+	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	# Knockback
 	velocity += knockback
 	knockback = knockback.move_toward(Vector2.ZERO, 12000 * delta)
-
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	var input_axis := Input.get_axis("ui_left", "ui_right")
-var is_attacking = false
-
-func _physics_process(delta):
 
 	# Attack
 	if Input.is_action_just_pressed("attack") and !is_attacking:
@@ -35,16 +30,12 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 
-	# Gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
 	# Jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Movement
-	var input_axis = Input.get_axis("left", "right")
+	var input_axis := Input.get_axis("ui_left", "ui_right")
 
 	if input_axis:
 		velocity.x = input_axis * SPEED
@@ -57,7 +48,6 @@ func _physics_process(delta):
 	reset_player_position()
 
 
-func update_animations(input_axis: float) -> void:
 func start_attack():
 	is_attacking = true
 	velocity.x = 0
@@ -69,8 +59,7 @@ func start_attack():
 	is_attacking = false
 
 
-func update_animations(input_axis):
-
+func update_animations(input_axis: float) -> void:
 	if is_attacking:
 		return
 
@@ -95,7 +84,8 @@ func take_damage(amount: int, attacker_pos: Vector2) -> void:
 	health -= amount
 
 	var dir = sign(global_position.x - attacker_pos.x)
-#
+
+	# Knockback
 	knockback = Vector2(dir * 450, -300)
 
 	if health <= 0:
@@ -107,8 +97,5 @@ func die() -> void:
 
 
 func reset_player_position() -> void:
-
-
-func reset_player_position():
 	if global_position.y > 500:
 		global_position = Vector2(100, 100)
