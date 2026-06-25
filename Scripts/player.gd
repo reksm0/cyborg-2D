@@ -64,7 +64,6 @@ func take_damage(amount: int, attacker_pos: Vector2) -> void:
 
 
 func die() -> void:
-	print("Player died")
 	queue_free()
 
 

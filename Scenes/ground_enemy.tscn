@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tcllqok72o5v"]
 
-[ext_resource type="Script" uid="uid://bj0p6g60s4phv" path="res://Scripts/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://bj0p6g60s4phv" path="res://Scripts/ground_enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://bxqwlj7y85tiw" path="res://Assets/enemy/Tank bot/tank_attack1.png" id="2_ghaa6"]
 [ext_resource type="Texture2D" uid="uid://bg03a65f87trs" path="res://Assets/enemy/Tank bot/tank_run.png" id="3_1dp5w"]
 [ext_resource type="Texture2D" uid="uid://ch0yqke2axk47" path="res://Assets/enemy/Tank bot/tank_death.png" id="4_auwsv"]
@@ -242,7 +242,7 @@ position = Vector2(-1, 2)
 sprite_frames = SubResource("SpriteFrames_iifgy")
 animation = &"chase"
 autoplay = "walk"
-frame_progress = 0.010152531
+frame_progress = 0.8228234
 
 [node name="Range" type="Area2D" parent="." unique_id=156311337]
 collision_layer = 0

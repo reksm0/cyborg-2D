@@ -36,13 +36,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if dead:
 		return
+	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	attack_timer -= delta
+	
 	if player:
 		var distance = global_position.distance_to(player.global_position)
 		forget_timer = forget_time
 		last_seen_position = player.global_position
+		# Attack
 		if distance < attack_range and attack_timer <= 0:
 			start_attack()
 			move_and_slide()
@@ -50,7 +53,7 @@ func _physics_process(delta: float) -> void:
 			return
 	else:
 		forget_timer -= delta
-		
+	#Chase/Patrol
 	if forget_timer > 0:
 		chasing = true
 		chase_target(last_seen_position)
@@ -63,6 +66,7 @@ func _physics_process(delta: float) -> void:
 
 
 func patrol() -> void:
+	#Wall Check
 	if not ray_y.is_colliding() or ray_x.is_colliding():
 		change_dir()
 	velocity.x = speed * direction
@@ -71,8 +75,9 @@ func patrol() -> void:
 
 func chase_target(target_pos: Vector2) -> void:
 	var dir = sign(target_pos.x - global_position.x)
-
+	#Chase Movement
 	velocity.x = move_toward(velocity.x,dir * max_speed,acc * get_physics_process_delta_time())
+	#Face target
 	if dir != 0:
 		animated_sprite_2d.flip_h = dir < 0
 
@@ -80,25 +85,27 @@ func chase_target(target_pos: Vector2) -> void:
 func change_dir():
 	direction *= -1
 	animated_sprite_2d.flip_h = direction < 0
+	# Update Rays
 	ray_y.position.x = 37 if direction == 1 else -37
 	ray_x.position.x = 10 if direction == 1 else -10
 	ray_x.target_position.x = 30 if direction == 1 else -30
 
 
 func update_animation():
+	# Death Animation
 	if dead:
 		if animated_sprite_2d.animation != "death":
 			animated_sprite_2d.play("death")
 		return
-
+	# Attack Animation
 	if is_attacking:
 		if animated_sprite_2d.animation != "attack":
 			animated_sprite_2d.play("attack")
 		return
-
-	if animated_sprite_2d.animation == "hurt":
+	# Hurt Animation
+	if animated_sprite_2d.animation == "take_damage":
 		return
-
+	# Movement animations
 	if chasing:
 		if animated_sprite_2d.animation != "chase":
 			animated_sprite_2d.play("chase")
@@ -108,30 +115,35 @@ func update_animation():
 
 
 func start_attack():
+	# Prevents Attack overlap
 	if is_attacking or dead:
 		return
 	is_attacking = true
 	attack_timer = attack_cooldown
 	velocity.x = 0
 	animated_sprite_2d.play("attack")
-	if player and player.has_method("take_damage"):
+	# Damage player
+	if player:
 		player.take_damage(1, global_position)
 	await animated_sprite_2d.animation_finished
 	is_attacking = false
 
 
 func take_damage(amount):
+	# Ignore if dead
 	if dead:
 		return
 	health -= amount
+	# Death check
 	if health <= 0:
 		die()
 		return
-	animated_sprite_2d.play("hurt")
+	animated_sprite_2d.play("take_damage")
 	await animated_sprite_2d.animation_finished
 
 
 func die():
+	# Prevents double death
 	if dead:
 		return
 	dead = true
@@ -140,11 +152,13 @@ func die():
 
 
 func _on_range_body_entered(body: Node2D) -> void:
+	# Player Detection
 	if body.is_in_group("player"):
 		player = body
 		forget_timer = forget_time
 
 
 func _on_range_body_exited(body: Node2D) -> void:
+	# Lose Target
 	if body == player:
 		player = null
