@@ -231,6 +231,7 @@ animations = [{
 radius = 90.0
 
 [node name="GroundEnemy" type="CharacterBody2D" unique_id=1920386209]
+collision_mask = 3
 script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491324122]
@@ -246,6 +247,7 @@ frame_progress = 0.8228234
 
 [node name="Range" type="Area2D" parent="." unique_id=156311337]
 collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=740966109]
 shape = SubResource("CircleShape2D_4gyqm")
