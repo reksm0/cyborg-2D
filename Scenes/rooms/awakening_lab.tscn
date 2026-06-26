@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://nmc86ruf8hqg" path="res://Assets/environment/boxes_3.png" id="6_sruj3"]
 [ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://Scenes/player.tscn" id="7_pkowy"]
 [ext_resource type="PackedScene" uid="uid://dl3x6yxsmjepk" path="res://Scenes/triggers/exit_trigger.tscn" id="8_mji4w"]
+[ext_resource type="PackedScene" uid="uid://cb5mudf5wcgrp" path="res://Scenes/flying_enemy.tscn" id="9_chqt2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_go701"]
 texture = ExtResource("1_y8n1l")
@@ -204,5 +205,8 @@ tile_set = SubResource("TileSet_5a7ea")
 [node name="Exit Trigger" parent="." unique_id=1945629601 instance=ExtResource("8_mji4w")]
 position = Vector2(979.00006, 335)
 scale = Vector2(1.73, 4.63)
+
+[node name="FlyingEnemy" parent="." unique_id=1594817251 instance=ExtResource("9_chqt2")]
+position = Vector2(395, 217)
 
 [connection signal="hacked_successfully" from="Interactable Decors/Control panel" to="Interactable Decors/Laser barrier" method="_on_control_panel_hacked_successfully"]
