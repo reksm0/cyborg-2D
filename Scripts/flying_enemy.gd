@@ -1,32 +1,76 @@
 extends CharacterBody2D
 
+@export var speed := 100.0
+@export var chase_speed := 120.0
+@export var damage := 1
 
-const speed = 100
-var dir: Vector2
-var is_chase: bool
+# State
+var chasing := false
+var player_in_range := false
 
-@onready var timer: Timer = $Timer
+var chase_timer := 0.0
+const CHASE_TIME := 2.5
 
-func _ready() -> void:
-	is_chase = false
+# Patrol
+var home := Vector2.ZERO
+var target := Vector2.ZERO
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+
+func _ready():
+	home = global_position
+	pick_new_target()
+	animated_sprite_2d.play("fly")
+
+
+func _physics_process(delta):
+	if Global.playerBody == null:
+		return
+	var player = Global.playerBody
 	
-func _process(delta: float) -> void:
-	move(delta)
-	
-func move(delta):
-	if !is_chase:
-		velocity += speed * dir * delta
+	# CHASE LOGIC
+	if player_in_range:
+		chasing = true
+		chase_timer = CHASE_TIME  # resets while player is inside
+	elif chasing:
+		chase_timer -= delta
+		if chase_timer <= 0:
+			chasing = false
+
+	# MOVEMENT
+	if chasing:
+		var dir = global_position.direction_to(player.global_position)
+		velocity = dir * chase_speed
+	else:
+		var dir = global_position.direction_to(target)
+		velocity = dir * speed * 0.5
+		if global_position.distance_to(target) < 10:
+			pick_new_target()
+			
+	if velocity.x != 0:
+		animated_sprite_2d.flip_h = velocity.x < 0
 	move_and_slide()
-	
+
+# DETECTION AREA
+func _on_detection_area_body_entered(body):
+	if body.is_in_group("player"):
+		player_in_range = true
 
 
-func _on_timer_timeout() -> void:
-	timer.wait_time = choose([1.0,1.5,2.0])
-	
-	if !is_chase:
-		dir = choose([Vector2.LEFT,Vector2.RIGHT,Vector2.UP,Vector2.DOWN])
-		print(dir)
-		
-func choose(arr):
-	arr.shuffle()
-	return arr.front()
+func _on_detection_area_body_exited(body):
+	if body.is_in_group("player"):
+		player_in_range = false
+
+
+# PATROL POINTS
+func pick_new_target():
+	target = home + Vector2(
+		randf_range(-120, 120),
+		randf_range(-80, 80)
+	)
+
+# DAMAGE PLAYER ON CONTACT
+func _on_hitbox_body_entered(body):
+	if body.is_in_group("player"):
+		body.take_damage(damage, global_position)

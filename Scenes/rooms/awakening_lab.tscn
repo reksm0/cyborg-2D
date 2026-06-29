@@ -207,6 +207,6 @@ position = Vector2(979.00006, 335)
 scale = Vector2(1.73, 4.63)
 
 [node name="FlyingEnemy" parent="." unique_id=1594817251 instance=ExtResource("9_chqt2")]
-position = Vector2(395, 217)
+position = Vector2(178, 120)
 
 [connection signal="hacked_successfully" from="Interactable Decors/Control panel" to="Interactable Decors/Laser barrier" method="_on_control_panel_hacked_successfully"]

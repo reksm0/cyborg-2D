@@ -8,20 +8,16 @@ const JUMP_VELOCITY = -450.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var health := 5
-var knockback := Vector2.ZERO
 var is_attacking := false
 
 func _ready():
 	add_to_group("player")
+	Global.playerBody = self
 	
 func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-	# Knockback
-	velocity += knockback
-	knockback = knockback.move_toward(Vector2.ZERO, 12000 * delta)
 
 	# Attack
 	if Input.is_action_just_pressed("attack") and !is_attacking:
@@ -88,8 +84,7 @@ func take_damage(amount: int, attacker_pos: Vector2) -> void:
 	var dir = sign(global_position.x - attacker_pos.x)
 
 	# Knockback
-	knockback = Vector2(dir * 450, -300)
-
+	velocity = Vector2(dir * 450, -300)
 	if health <= 0:
 		die()
 
