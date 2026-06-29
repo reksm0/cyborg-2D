@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dwkot8ord1m11"]
+
+[ext_resource type="Texture2D" uid="uid://bjjha6aoocfnb" path="res://player/player_assets/player_hud/health_bar_frame.png" id="1_hbrno"]
+[ext_resource type="Script" uid="uid://db6drmtiyq135" path="res://player/player_hud/player_hud.gd" id="1_k42ch"]
+
+[sub_resource type="Gradient" id="Gradient_k42ch"]
+colors = PackedColorArray(0, 0, 0, 1, 0.02, 0.02, 0.02, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j0avd"]
+gradient = SubResource("Gradient_k42ch")
+height = 16
+
+[sub_resource type="Gradient" id="Gradient_cb0cj"]
+colors = PackedColorArray(4.7168134e-05, 0.46522737, 0.93008983, 1, 0.5149425, 0.7223619, 0.9999972, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h43hu"]
+gradient = SubResource("Gradient_cb0cj")
+
+[node name="PlayerHud" type="CanvasLayer" unique_id=2127787377]
+process_mode = 3
+layer = 2
+script = ExtResource("1_k42ch")
+
+[node name="Control" type="Control" parent="." unique_id=1618930954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HPMarginContainer" type="MarginContainer" parent="Control" unique_id=236784590]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 99.8875
+offset_bottom = 20.0
+scale = Vector2(1.7090127, 1.9884113)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/HPMarginContainer" unique_id=533850476]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_hbrno")
+region_rect = Rect2(0, 0, 40, 20)
+patch_margin_left = 27
+patch_margin_right = 7
+axis_stretch_horizontal = 1
+
+[node name="HPBar" type="TextureProgressBar" parent="Control/HPMarginContainer/NinePatchRect" unique_id=1333000154]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.999998
+offset_top = 6.0000005
+offset_right = -38.028778
+offset_bottom = 10.440952
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.898837, 0.24548963)
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+texture_under = SubResource("GradientTexture2D_j0avd")
+texture_progress = SubResource("GradientTexture2D_h43hu")

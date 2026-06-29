@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://c3m7fbk3urnia"]
 
-[ext_resource type="Texture2D" uid="uid://brxgaplrs5ubm" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_y8n1l"]
-[ext_resource type="Texture2D" uid="uid://bhbno5mj0kk7s" path="res://Assets/environment/Capsule_broken.png" id="2_mji4w"]
-[ext_resource type="Texture2D" uid="uid://bnd6yn1ru7ljh" path="res://Assets/environment/computer.png" id="3_chqt2"]
+[ext_resource type="Texture2D" uid="uid://qcmjvbqkqjwj" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_y8n1l"]
+[ext_resource type="Texture2D" uid="uid://c5j4b61klmxxr" path="res://Assets/environment/Capsule_broken.png" id="2_mji4w"]
+[ext_resource type="Texture2D" uid="uid://bus1lfqv6knyw" path="res://Assets/environment/computer.png" id="3_chqt2"]
 [ext_resource type="PackedScene" uid="uid://dgmwlmvjr8o8d" path="res://Scenes/interactables/control_ panel.tscn" id="4_ov5aq"]
 [ext_resource type="PackedScene" uid="uid://b4jvqu2tgn5ov" path="res://Scenes/interactables/laser_barrier.tscn" id="5_6wsl2"]
-[ext_resource type="Texture2D" uid="uid://nmc86ruf8hqg" path="res://Assets/environment/boxes_3.png" id="6_sruj3"]
-[ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://Scenes/player.tscn" id="7_pkowy"]
+[ext_resource type="Texture2D" uid="uid://bxm2schc83cyy" path="res://Assets/environment/boxes_3.png" id="6_sruj3"]
+[ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://player/player_scene/player.tscn" id="7_pkowy"]
 [ext_resource type="PackedScene" uid="uid://dl3x6yxsmjepk" path="res://Scenes/triggers/exit_trigger.tscn" id="8_mji4w"]
 [ext_resource type="PackedScene" uid="uid://cb5mudf5wcgrp" path="res://Scenes/flying_enemy.tscn" id="9_chqt2"]
 

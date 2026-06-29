@@ -20,12 +20,12 @@ scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_4f5pf")
 
 [node name="Label" type="Label" parent="." unique_id=1589719239]
-offset_left = -176.0
-offset_top = -369.0
-offset_right = 161.0
-offset_bottom = -281.0
+offset_left = -143.0
+offset_top = -327.0
+offset_right = 105.0
+offset_bottom = -239.0
 theme_override_font_sizes/font_size = 64
-text = "[E] interact"
+text = "[E] Hack"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
