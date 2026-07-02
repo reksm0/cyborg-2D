@@ -20,6 +20,7 @@ window/size/viewport_height=1080
 [autoload]
 
 PlayerHud="*uid://dwkot8ord1m11"
+Global="*uid://boa26d26fy5em"
 
 [display]
 
@@ -29,6 +30,10 @@ window/size/viewport_height=1080
 [global_group]
 
 player=""
+
+[gui]
+
+theme/custom_font="uid://d4llkevmxcha5"
 
 [input]
 
