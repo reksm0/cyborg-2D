@@ -9,8 +9,10 @@ size = Vector2(96, 128)
 script = ExtResource("1_xhhkf")
 
 [node name="AnimatableBody2D" type="AnimatedSprite2D" parent="." unique_id=936173877]
+position = Vector2(24, -76)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858424060]
+position = Vector2(24, -76)
 collision_layer = 4
 collision_mask = 2
 
@@ -20,12 +22,20 @@ scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_4f5pf")
 
 [node name="Label" type="Label" parent="." unique_id=1589719239]
-offset_left = -143.0
-offset_top = -327.0
-offset_right = 105.0
-offset_bottom = -239.0
+offset_left = -119.0
+offset_top = -403.0
+offset_right = 129.0
+offset_bottom = -315.0
 theme_override_font_sizes/font_size = 64
 text = "[E] Hack"
+
+[node name="access text" type="Label" parent="." unique_id=1688722689]
+offset_left = -127.475006
+offset_top = -130.58002
+offset_right = 172.525
+offset_bottom = -42.580017
+theme_override_font_sizes/font_size = 64
+text = "[E] Access"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

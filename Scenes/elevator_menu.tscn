@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b1ora47iqclny"]
+
+[ext_resource type="Script" uid="uid://ctaqx1aohm0ww" path="res://Scripts/elevator_menu.gd" id="1_tvrim"]
+[ext_resource type="Texture2D" uid="uid://blwjy1ym2dc5g" path="res://Assets/environment/elevator/elevator menu panel.png" id="2_xmord"]
+[ext_resource type="Texture2D" uid="uid://bjxdjytv2m62j" path="res://Assets/environment/elevator/icon green.png" id="3_nkrkn"]
+[ext_resource type="Texture2D" uid="uid://hf0kwp20bkvm" path="res://Assets/environment/elevator/icon red.png" id="4_noend"]
+[ext_resource type="Texture2D" uid="uid://yro3owqidxxd" path="res://Assets/environment/elevator/icon purple.png" id="5_unmej"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tvrim"]
+load_path = "res://.godot/imported/button blue.png-ffbe0371124814b6fb4f00449bb9e29d.ctex"
+
+[node name="Elevator Menu" type="CanvasLayer" unique_id=789180925]
+script = ExtResource("1_tvrim")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1979910615]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(48.000366, 27.001488)
+color = Color(0, 0, 0, 0.31764707)
+
+[node name="Panel" type="Panel" parent="." unique_id=736533878]
+visible = false
+offset_left = 427.99997
+offset_top = 37.000004
+offset_right = 532.0
+offset_bottom = 167.0
+scale = Vector2(10.101323, 7.7674026)
+
+[node name="Sprite2D" type="TextureRect" parent="." unique_id=1743815654]
+offset_left = 436.0
+offset_top = 32.0
+offset_right = 1460.0
+offset_bottom = 1056.0
+texture = ExtResource("2_xmord")
+
+[node name="Title" type="Label" parent="." unique_id=331976748]
+offset_left = 670.0
+offset_top = 159.0
+offset_right = 1520.0005
+offset_bottom = 334.0
+scale = Vector2(0.69317955, 0.64591736)
+theme_override_font_sizes/font_size = 128
+text = "Main Elevator"
+
+[node name="Floor List" type="VBoxContainer" parent="." unique_id=358275728]
+offset_left = 621.0
+offset_top = 394.0
+offset_right = 2104.335
+offset_bottom = 1325.0
+scale = Vector2(0.46258003, 0.51350206)
+
+[node name="Development Wing" type="Button" parent="Floor List" unique_id=108418552]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "Development Wing"
+icon = SubResource("CompressedTexture2D_tvrim")
+expand_icon = true
+
+[node name="Assembly Wing" type="Button" parent="Floor List" unique_id=1918219141]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "Assembly Wing"
+icon = ExtResource("3_nkrkn")
+expand_icon = true
+
+[node name="Testing Wing" type="Button" parent="Floor List" unique_id=54164525]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "Testing Wing"
+icon = ExtResource("3_nkrkn")
+expand_icon = true
+
+[node name="Ground Exit" type="Button" parent="Floor List" unique_id=29280443]
+layout_mode = 2
+tooltip_text = "Need Encryption Key"
+theme_override_font_sizes/font_size = 128
+text = "Ground Exit"
+icon = ExtResource("4_noend")
+expand_icon = true
+
+[node name="Unknown Area" type="Button" parent="Floor List" unique_id=1627963459]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "??????????????"
+icon = ExtResource("5_unmej")
+expand_icon = true
+
+[connection signal="pressed" from="Floor List/Development Wing" to="." method="_on_development_wing_pressed"]
+[connection signal="pressed" from="Floor List/Assembly Wing" to="." method="_on_assembly_wing_pressed"]
+[connection signal="pressed" from="Floor List/Testing Wing" to="." method="_on_testing_wing_pressed"]
+[connection signal="pressed" from="Floor List/Ground Exit" to="." method="_on_ground_exit_pressed"]
