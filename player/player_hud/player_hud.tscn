@@ -37,7 +37,7 @@ layout_mode = 0
 offset_left = 1.0
 offset_right = 99.8875
 offset_bottom = 20.0
-scale = Vector2(1.7090127, 1.9884113)
+scale = Vector2(4.2316756, 4.227552)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/HPMarginContainer" unique_id=533850476]
 unique_name_in_owner = true
@@ -51,13 +51,13 @@ axis_stretch_horizontal = 1
 [node name="HPBar" type="TextureProgressBar" parent="Control/HPMarginContainer/NinePatchRect" unique_id=1333000154]
 show_behind_parent = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 1.2440001
+anchor_bottom = 1.3620001
 offset_left = 18.999998
 offset_top = 6.0000005
-offset_right = -38.028778
-offset_bottom = 10.440952
+offset_right = -61.94079
+offset_bottom = 3.2009506
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.898837, 0.24548963)

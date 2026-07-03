@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cb5mudf5wcgrp"]
+
+[ext_resource type="Script" uid="uid://dx841584l8e50" path="res://Scripts/flying_enemy.gd" id="1_a0nct"]
+[ext_resource type="Texture2D" uid="uid://1uunohre7s5v" path="res://Assets/enemy/Mechbat/fly_death.png" id="2_a0nct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcrhg"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(528, 0, 264, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvc0l"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(528, 204, 264, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6h0x"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(528, 408, 264, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bivt5"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(528, 612, 264, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27kfy"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(528, 816, 264, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tw12"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(238, 0, 238, 203)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky706"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(238, 203, 238, 203)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdsl2"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(238, 406, 238, 203)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1kk2"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(238, 609, 238, 203)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvda4"]
+atlas = ExtResource("2_a0nct")
+region = Rect2(238, 812, 238, 203)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfo0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcrhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvc0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6h0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bivt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27kfy")
+}],
+"loop": false,
+"name": &"death",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tw12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky706")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdsl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1kk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvda4")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fup1"]
+radius = 48.010414
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a0nct"]
+radius = 55.326305
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gcrhg"]
+radius = 245.27739
+
+[node name="FlyingEnemy" type="CharacterBody2D" unique_id=1594817251]
+collision_layer = 2
+script = ExtResource("1_a0nct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1476288445]
+position = Vector2(2.274109, -12.348038)
+scale = Vector2(0.598942, 0.6960784)
+sprite_frames = SubResource("SpriteFrames_kfo0u")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430351875]
+position = Vector2(0.2741089, -1.3480377)
+shape = SubResource("CircleShape2D_5fup1")
+
+[node name="Timer" type="Timer" parent="." unique_id=1039579169]
+autostart = true
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=679073526]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=773612646]
+shape = SubResource("CircleShape2D_a0nct")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=2109486847]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=465538907]
+shape = SubResource("CircleShape2D_gcrhg")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

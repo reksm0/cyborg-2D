@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bflw6f0a1e35t" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/Individual_PNGs/decor_2.png" id="5_041gb"]
 [ext_resource type="Texture2D" uid="uid://dku4hqg2f0ksa" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/Individual_PNGs/decor_5.png" id="6_m4oe5"]
 [ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://player/player_scene/player.tscn" id="8_7ht22"]
+[ext_resource type="PackedScene" uid="uid://cb5mudf5wcgrp" path="res://Scenes/flying_enemy.tscn" id="10_fly"]
+[ext_resource type="PackedScene" uid="uid://tcllqok72o5v" path="res://Scenes/ground_enemy.tscn" id="9_041gb"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48shv"]
 texture = ExtResource("1_vijy6")
@@ -456,13 +459,14 @@ texture_region_size = Vector2i(32, 32)
 16:6/0 = 0
 17:6/0 = 0
 0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 16)
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 1.2745247, 16, -0.63726044, -16, 16)
 1:7/0 = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -16, -16, 0.122844696)
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, -16, -16, 1.2745247)
 2:7/0 = 0
-2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, -16, -16, -16, 16, 0.122844696)
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0.31863022, -16, -16)
 3:7/0 = 0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, -16, -16, 0, 16, 16)
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, -0.31863022, -16, -2.5490456)
+
 4:7/0 = 0
 5:7/0 = 0
 6:7/0 = 0
@@ -1080,3 +1084,42 @@ position = Vector2(0, -34)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
+
+[node name="FlyingEnemy" parent="." unique_id=1594817251 instance=ExtResource("10_fly")]
+position = Vector2(-1048, -17)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2008809713]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=384894979]
+polygon = PackedVector2Array(-1440, -63, -642, -63, -450, 32, -354, 32, -352, 126, -226, 129, -222, 447, -932, 448, -994, 481, -1664, 480, -1665, 640, -1857, 640, -1856, 735, -2144, 735, -2144, 385, -2081, 385, -2079, 351, -2015, 353, -2016, 256, -1697, 258, -1695, 223, -2011, 222, -2017, 93, -1440, 97, -1440, -63, -1550, -142, -1532, 49, -2061, 55, -2063, 304, -2211, 377, -2213, 769, -1809, 766, -1806, 668, -1634, 668, -1633, 508, -191, 524, -195, -79, -1550, -142)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1684000961]
+polygon = PackedVector2Array(-1600, 256, -1504, 256, -1504, 288, -1600, 288)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=153943006]
+position = Vector2(-2, -4)
+polygon = PackedVector2Array(-958, 196, -862, 196, -862, 228, -958, 228)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1568285980]
+position = Vector2(0, -4)
+polygon = PackedVector2Array(-800, 292, -608, 292, -608, 323, -800, 324)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1096755064]
+position = Vector2(-608, 28)
+polygon = PackedVector2Array(-800, 292, -640, 292, -640, 325, -800, 324)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1475515874]
+position = Vector2(-384, -36)
+polygon = PackedVector2Array(-800, 292, -640, 292, -640, 325, -800, 324)
+
+[node name="GroundEnemy" parent="." unique_id=1920386209 instance=ExtResource("9_041gb")]
+position = Vector2(-482, 437)
+
+[node name="GroundEnemy2" parent="." unique_id=600422145 instance=ExtResource("9_041gb")]
+position = Vector2(-2005, 214)
+
+[node name="GroundEnemy3" parent="." unique_id=952787946 instance=ExtResource("9_041gb")]
+position = Vector2(-1087, 915)
+
