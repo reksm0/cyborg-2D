@@ -22,8 +22,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 
 	# Knockback
-	velocity += knockback
-	knockback = knockback.move_toward(Vector2.ZERO, 12000 * delta)
+	#velocity += knockback
+	#knockback = knockback.move_toward(Vector2.ZERO, 12000 * delta)
 	
 	# Disable player controls (used for elevators, cutscenes, dialogue, etc.)
 	if !controls_enabled:
