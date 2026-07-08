@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Cyborg"
-run/main_scene="uid://d1elv1t6sqbjm"
+run/main_scene="uid://d2pkjtor72xp1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 "<<<<<<<HEAD[display]window/size/viewport_width"=1920

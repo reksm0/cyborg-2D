@@ -57,12 +57,15 @@ theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274
 theme_override_font_sizes/font_size = 90
 text = "New Game"
 
-[node name="Button2" type="Button" parent="Control/mainmenu" unique_id=892928831]
+[node name="Button2" type="Button" parent="Control/mainmenu" unique_id=1108411957]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5019608, 0.6784314, 0.8627451, 1)
-theme_override_colors/font_hover_color = Color(0.67058825, 0.87058824, 0.972549, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5001892, 0.6802989, 0.86342055, 1)
+theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
 theme_override_font_sizes/font_size = 90
-text = "continue"
+text = "Continue"
 
 [node name="Button3" type="Button" parent="Control/mainmenu" unique_id=2085263263]
 layout_mode = 2

@@ -17,6 +17,8 @@ func _ready():
 	button_continue.pressed.connect(_on_continue_pressed)
 	button_credits.pressed.connect(_on_credits_pressed)
 	button_exit.pressed.connect(_on_exit_pressed)
+	#func _on_button1_pressed():
+	#get_tree().change_scene_to_file("res://Scenes/rooms/awakening_lab.tscn".tscn")
 
 	# Disable Continue button if no save file exists
 	button_continue.disabled = not FileAccess.file_exists("user://savegame.save")
