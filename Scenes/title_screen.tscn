@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://d1elv1t6sqbjm"]
 
 [ext_resource type="Texture2D" uid="uid://b6us86o6thu1j" path="res://Assets/manami's assets/background/169.png" id="1_klylv"]
+[ext_resource type="Script" uid="uid://da6jitk1mwgpd" path="res://Scenes/title_screen.gd" id="1_p3fck"]
 
 [node name="Title_Screen" type="CanvasLayer" unique_id=1409717127]
 layer = 8
+script = ExtResource("1_p3fck")
 
 [node name="Control" type="Control" parent="." unique_id=755590156]
 layout_mode = 3
@@ -71,4 +73,16 @@ theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
 theme_override_font_sizes/font_size = 90
 text = "credits
+"
+
+[node name="Button4" type="Button" parent="Control/mainmenu" unique_id=2057446576]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5001892, 0.6802989, 0.86342055, 1)
+theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
+theme_override_font_sizes/font_size = 90
+text = "exit
+
 "
