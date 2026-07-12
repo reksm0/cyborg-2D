@@ -1,6 +1,85 @@
-[gd_scene format=3 uid="uid://d1dnodi3eokgc"]
+[gd_scene format=4 uid="uid://d1dnodi3eokgc"]
 
 [ext_resource type="Script" uid="uid://bqf0xix2b7mre" path="res://Scripts/main_elevator.gd" id="1_xhhkf"]
+[ext_resource type="Texture2D" uid="uid://mvqxqbfogix5" path="res://Assets/environment/sci-fi platformer - free/tileset-32px.png" id="3_ursi0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2mmbd"]
+texture = ExtResource("3_ursi0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ke3e4"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_2mmbd")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f5pf"]
 size = Vector2(96, 128)
@@ -10,6 +89,12 @@ script = ExtResource("1_xhhkf")
 
 [node name="AnimatableBody2D" type="AnimatedSprite2D" parent="." unique_id=936173877]
 position = Vector2(24, -76)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1514364960]
+position = Vector2(-4024, 181)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAiAP//AQABAAEAAAAbAPr/AQADAAEAAAAbAP//AQADAAIAAAAjAP//AQAEAAIAAAAjAPr/AQAEAAEAAAAcAPr/AQABAAMAAAAdAPr/AQABAAMAAAAeAPr/AQABAAMAAAAfAPr/AQABAAMAAAAgAPr/AQABAAMAAAAhAPr/AQABAAMAAAAiAPr/AQABAAMAAAAbAPv/AQACAAIAAAAbAPz/AQACAAIAAAAbAP3/AQACAAIAAAAbAP7/AQACAAIAAAAjAPv/AQAAAAIAAAAjAPz/AQAAAAIAAAAjAP3/AQAAAAIAAAAjAP7/AQAAAAIAAAAhAP//AQADAAIAAAAdAP//AQAEAAIAAAAdAP7/AQAAAAIAAAAdAP3/AQAAAAIAAAAdAPz/AQAAAAEAAAAeAPz/AQABAAEAAAAfAPz/AQABAAEAAAAgAPz/AQABAAEAAAAhAP7/AQACAAIAAAAhAP3/AQACAAIAAAAhAPz/AQACAAEAAAAiAP7/AQABAAAAAAAiAP3/AQABAAAAAAAiAPz/AQABAAAAAAAiAPv/AQABAAAAAAAhAPv/AQABAAAAAAAgAPv/AQABAAAAAAAfAPv/AQABAAAAAAAeAPv/AQABAAAAAAAdAPv/AQABAAAAAAAcAPv/AQABAAAAAAAcAPz/AQABAAAAAAAcAP3/AQABAAAAAAAcAP7/AQABAAAAAAAeAP3/AQABAAAAAAAfAP3/AQAAAAAAAAAgAP3/AQABAAAAAAAgAP7/AQABAAAAAAAgAP//AQABAAAAAAAfAP//AQAAAAAAAAAeAP//AQABAAAAAAAeAP7/AQABAAAAAAAfAP7/AQAAAAAAAAAcAP//AQABAAEAAAA=")
+tile_set = SubResource("TileSet_ke3e4")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858424060]
 position = Vector2(24, -76)

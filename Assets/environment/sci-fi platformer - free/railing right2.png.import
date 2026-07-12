@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://61qpf1gisiia"
-path="res://.godot/imported/bg2.2.jpg.jpeg-e758b5651ec25beecb32f8f060488518.ctex"
+uid="uid://ihe8ttd512p3"
+path="res://.godot/imported/railing right2.png-8b2355b3f49da28ece4bd99aafa3bebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/environment/bg2.2.jpg.jpeg"
-dest_files=["res://.godot/imported/bg2.2.jpg.jpeg-e758b5651ec25beecb32f8f060488518.ctex"]
+source_file="res://Assets/environment/sci-fi platformer - free/railing right2.png"
+dest_files=["res://.godot/imported/railing right2.png-8b2355b3f49da28ece4bd99aafa3bebc.ctex"]
 
 [params]
 

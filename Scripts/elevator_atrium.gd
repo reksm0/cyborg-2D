@@ -3,9 +3,9 @@ extends Node2D
 @onready var player: Player = $player
 @onready var main_elevator: Node2D = $"Main elevator"
 
-@onready var development_marker: Marker2D = $"Development Marker"
-@onready var assembly_marker: Marker2D = $"Assembly Marker"
-@onready var testing_marker: Marker2D = $"Testing Marker"
+@onready var development_marker: Marker2D = $"Elevator Markers/Development Marker"
+@onready var assembly_marker: Marker2D = $"Elevator Markers/Assembly Marker"
+@onready var testing_marker: Marker2D = $"Elevator Markers/Testing Marker"
 
 enum Floor {
 	DEVELOPMENT,
@@ -49,13 +49,13 @@ func _on_floor_selected(floor):
 		player,
 		"global_position",
 		target_position,
-		.7
+		1.2
 	)
 	tween.tween_property(
 		main_elevator,
 		"global_position",
 		target_position,
-		.7
+		1.2
 	)
 	await tween.finished
 	

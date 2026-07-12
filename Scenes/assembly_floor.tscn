@@ -1079,7 +1079,7 @@ metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=76565079]
 position = Vector2(0, -34)
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 

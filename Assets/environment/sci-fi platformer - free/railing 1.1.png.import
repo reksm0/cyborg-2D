@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tr2og3mly7jw"
-path="res://.godot/imported/ChatGPT Image Jun 29, 2026, 10_42_51 PM.png-2269b18bd29174f839c7b6d29ee9d677.ctex"
+uid="uid://csa81lhj7giqe"
+path="res://.godot/imported/railing 1.1.png-ad865e5cbeb84ff1261e195c051b266d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/environment/ChatGPT Image Jun 29, 2026, 10_42_51 PM.png"
-dest_files=["res://.godot/imported/ChatGPT Image Jun 29, 2026, 10_42_51 PM.png-2269b18bd29174f839c7b6d29ee9d677.ctex"]
+source_file="res://Assets/environment/sci-fi platformer - free/railing 1.1.png"
+dest_files=["res://.godot/imported/railing 1.1.png-ad865e5cbeb84ff1261e195c051b266d.ctex"]
 
 [params]
 
