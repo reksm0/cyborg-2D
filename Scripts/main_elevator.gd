@@ -5,6 +5,7 @@ var hacked = false
 ##signal hacked_successfully
 @onready var elevator_menu: CanvasLayer = $"../Elevator Menu"
 @onready var access_text: Label = $"access text"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

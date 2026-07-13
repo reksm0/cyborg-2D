@@ -23,16 +23,28 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_floor_selected(floor):
-	print("Travelling to ", floor)
+	
+	# Close menu and lock player controls
 	elevator_menu.visible = false
 	player.controls_enabled = false
+	
+	# Open elevator door
+	main_elevator.animated_sprite_2d.play("open")
+	await main_elevator.animated_sprite_2d.animation_finished
+	
+	# Player enters elevator
 	player.animated_sprite_2d.visible = false
+	
+	# Close elevator door
+	main_elevator.animated_sprite_2d.play("close")
+	await main_elevator.animated_sprite_2d.animation_finished
+	
+	# Player collision is disbled
 	player.collision_shape_2d.disabled = true
-	print("Travelling...")
 	
-	
+	# Find destination
 	var target_position: Vector2
-
+	
 	match floor:
 		Floor.DEVELOPMENT:
 			target_position = development_marker.global_position
@@ -43,6 +55,7 @@ func _on_floor_selected(floor):
 		Floor.TESTING:
 			target_position = testing_marker.global_position
 	
+	# Move player and elevator together
 	var tween = create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(
@@ -59,11 +72,25 @@ func _on_floor_selected(floor):
 	)
 	await tween.finished
 	
+	# Update current floor
 	elevator_menu.current_floor = floor
 	elevator_menu.update_menu()
 	
-	print("Arrived!")
-	
-	player.animated_sprite_2d.visible = true
-	player.controls_enabled = true
+	# Player collision is enabled
 	player.collision_shape_2d.disabled = false
+	
+	# Open elevator door
+	main_elevator.animated_sprite_2d.play("open")
+	await main_elevator.animated_sprite_2d.animation_finished
+	
+	# Player exits elevator
+	player.animated_sprite_2d.visible = true
+	
+	# Close elevator door
+	main_elevator.animated_sprite_2d.play("close")
+	await main_elevator.animated_sprite_2d.animation_finished
+	
+	# Restore player
+	player.controls_enabled = true
+	
+	
