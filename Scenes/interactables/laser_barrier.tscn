@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b4jvqu2tgn5ov"]
 
-[ext_resource type="Texture2D" uid="uid://consnllkmhgxt" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_deactivate.png" id="1_cjcgs"]
+[ext_resource type="Texture2D" uid="uid://bmy1ghema5boi" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_deactivate.png" id="1_cjcgs"]
 [ext_resource type="Script" uid="uid://cux7y8pthekxj" path="res://Scripts/laser_barrier.gd" id="1_f4ekb"]
-[ext_resource type="Texture2D" uid="uid://p78hlea3r2ic" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_idle.png" id="1_nxmxt"]
+[ext_resource type="Texture2D" uid="uid://cxn36kbegxsdo" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/barrier_idle.png" id="1_nxmxt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mclmd"]
 atlas = ExtResource("1_cjcgs")
@@ -207,7 +207,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"deactivated",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,6 +272,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2o5i"]
 size = Vector2(32, 64)
 
+[sub_resource type="Gradient" id="Gradient_mji4w"]
+offsets = PackedFloat32Array(0.4813278, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5nfk0"]
+gradient = SubResource("Gradient_mji4w")
+width = 82
+height = 68
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.4871795, 0.491453)
+fill_to = Vector2(0.988743, 0.55128205)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=645716432]
 position = Vector2(910, 535)
 script = ExtResource("1_f4ekb")
@@ -285,3 +298,11 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027046558]
 visible = false
 shape = SubResource("RectangleShape2D_k2o5i")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1950718065]
+position = Vector2(2.5868416e-05, 3.0000002)
+scale = Vector2(0.60975695, 1.08)
+color = Color(1.5720325, 0.17497085, 0.16892296, 1)
+energy = 2.0
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_5nfk0")

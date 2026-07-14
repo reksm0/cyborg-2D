@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://d1elv1t6sqbjm"]
+
+[ext_resource type="Texture2D" uid="uid://b6us86o6thu1j" path="res://Assets/manami's assets/background/169.png" id="1_klylv"]
+[ext_resource type="Script" uid="uid://da6jitk1mwgpd" path="res://Scenes/title_screen.gd" id="1_p3fck"]
+
+[node name="Title_Screen" type="CanvasLayer" unique_id=1409717127]
+layer = 8
+script = ExtResource("1_p3fck")
+
+[node name="Control" type="Control" parent="." unique_id=755590156]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=368293356]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.05490196, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=742838272]
+position = Vector2(956.99994, 536)
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("1_klylv")
+
+[node name="mainmenu" type="VBoxContainer" parent="Control" unique_id=1856433891]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -650.0
+offset_top = -392.0
+offset_right = -40.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="logo" type="Control" parent="Control/mainmenu" unique_id=1816345849]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="Control/mainmenu" unique_id=1096856191]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5001892, 0.6802989, 0.86342055, 1)
+theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
+theme_override_font_sizes/font_size = 90
+text = "New Game"
+
+[node name="Button2" type="Button" parent="Control/mainmenu" unique_id=1108411957]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5001892, 0.6802989, 0.86342055, 1)
+theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
+theme_override_font_sizes/font_size = 90
+text = "Continue"
+
+[node name="Button3" type="Button" parent="Control/mainmenu" unique_id=2085263263]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5001892, 0.6802989, 0.86342055, 1)
+theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
+theme_override_font_sizes/font_size = 90
+text = "credits
+"
+
+[node name="Button4" type="Button" parent="Control/mainmenu" unique_id=2057446576]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.5001892, 0.6802989, 0.86342055, 1)
+theme_override_colors/font_pressed_color = Color(0.9372549, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.67160755, 0.86907125, 0.9736274, 1)
+theme_override_font_sizes/font_size = 90
+text = "exit
+
+"

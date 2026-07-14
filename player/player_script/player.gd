@@ -1,14 +1,16 @@
 class_name Player extends CharacterBody2D
 
 const SPEED = 170.0
-const JUMP_VELOCITY = -450.0
+const JUMP_VELOCITY = -500.0
 
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var health := 5
 var is_attacking := false
+var controls_enabled := true
 
 func _ready():
 	add_to_group("player")
@@ -19,6 +21,16 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	# Knockback
+	#velocity += knockback
+	#knockback = knockback.move_toward(Vector2.ZERO, 12000 * delta)
+	
+	# Disable player controls (used for elevators, cutscenes, dialogue, etc.)
+	if !controls_enabled:
+		velocity.x = 0
+		move_and_slide()
+		return
+	
 	# Attack
 	if Input.is_action_just_pressed("attack") and !is_attacking:
 		start_attack()
@@ -29,11 +41,11 @@ func _physics_process(delta: float) -> void:
 		return
 
 	# Jump
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Movement
-	var input_axis := Input.get_axis("ui_left", "ui_right")
+	var input_axis := Input.get_axis("left", "right")
 
 	if input_axis:
 		velocity.x = input_axis * SPEED
@@ -43,7 +55,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	update_animations(input_axis)
-	reset_player_position()
+	
 
 
 func start_attack():
@@ -91,8 +103,3 @@ func take_damage(amount: int, attacker_pos: Vector2) -> void:
 
 func die() -> void:
 	queue_free()
-
-
-func reset_player_position() -> void:
-	if global_position.y > 500:
-		global_position = Vector2(100, 100)

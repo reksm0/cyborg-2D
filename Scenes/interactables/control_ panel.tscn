@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dgmwlmvjr8o8d"]
 
 [ext_resource type="Script" uid="uid://bhfaghi4bytvj" path="res://Scripts/control_panel.gd" id="1_23m4l"]
-[ext_resource type="Texture2D" uid="uid://d0vrkex0ubum6" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_idle.png" id="1_84xqn"]
-[ext_resource type="Texture2D" uid="uid://3nk6bucgenf0" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_deactivate.png" id="1_af86p"]
+[ext_resource type="Texture2D" uid="uid://cha871yukx0x2" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_idle.png" id="1_84xqn"]
+[ext_resource type="Texture2D" uid="uid://buq7a5hgvw07p" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Barrier_Control_Panel/control_panel_deactivate.png" id="1_af86p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1j2ri"]
 atlas = ExtResource("1_af86p")
@@ -229,7 +229,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"deactivated",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -298,7 +298,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af86p"]
-size = Vector2(221, 145)
+size = Vector2(221, 19)
+
+[sub_resource type="Gradient" id="Gradient_8bjsp"]
+offsets = PackedFloat32Array(0.43983403, 0.8755187)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8bjsp"]
+gradient = SubResource("Gradient_8bjsp")
+width = 82
+height = 68
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.4871795, 0.491453)
+fill_to = Vector2(0.8333333, 0.21367522)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8bjsp"]
+light_mode = 1
 
 [node name="Control panel" type="Node2D" unique_id=966204719]
 script = ExtResource("1_23m4l")
@@ -306,7 +322,7 @@ script = ExtResource("1_23m4l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=607051063]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1j2ri")
-animation = &"idle"
+animation = &"deactivated"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=210932701]
@@ -314,15 +330,26 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=616736668]
-position = Vector2(-4.5, -8.5)
+position = Vector2(-4.5, 54.5)
 shape = SubResource("RectangleShape2D_af86p")
 
-[node name="Label" type="Label" parent="." unique_id=389255059]
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=368177636]
+position = Vector2(4, 7)
+scale = Vector2(3.6997254, 3.5156248)
+color = Color(1.5720325, 0.17497085, 0.16892296, 1)
+energy = 0.77
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_8bjsp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=60705166]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=389255059]
+material = SubResource("CanvasItemMaterial_8bjsp")
 offset_left = -46.0
 offset_top = -81.0
 offset_right = 47.0
 offset_bottom = -47.0
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "[E] Hack"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
