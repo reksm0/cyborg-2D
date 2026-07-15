@@ -5,7 +5,9 @@ var hacked = false
 ##signal hacked_successfully
 @onready var elevator_menu: CanvasLayer = $"../Elevator Menu"
 @onready var access_text: Label = $"access text"
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var room: AnimatedSprite2D = $room
+@onready var door: AnimatedSprite2D = $door
+@onready var player: Player = $"../player"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,13 +18,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact") and hacked :
 		elevator_menu.visible = true
+		player.controls_enabled = false
 	
 	if elevator_menu.visible and Input.is_action_just_pressed("close"):
 		elevator_menu.visible = false
+		player.controls_enabled = true
 
 
 	if player_in_range and Input.is_action_just_pressed("interact") and !hacked:
-		print ("elevator hacked")
 		hacked = true
 		label.visible = false
 		access_text.visible = true

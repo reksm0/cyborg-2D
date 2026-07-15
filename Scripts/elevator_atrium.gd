@@ -6,6 +6,7 @@ extends Node2D
 @onready var development_marker: Marker2D = $"Elevator Markers/Development Marker"
 @onready var assembly_marker: Marker2D = $"Elevator Markers/Assembly Marker"
 @onready var testing_marker: Marker2D = $"Elevator Markers/Testing Marker"
+@onready var camera_2d: Camera2D = $player/Camera2D
 
 enum Floor {
 	DEVELOPMENT,
@@ -25,19 +26,24 @@ func _process(delta: float) -> void:
 func _on_floor_selected(floor):
 	
 	# Close menu and lock player controls
-	elevator_menu.visible = false
+	player.animated_sprite_2d.play("idle")
 	player.controls_enabled = false
+	player.velocity = Vector2.ZERO
+	elevator_menu.visible = false
+	main_elevator.access_text.visible = false
 	
 	# Open elevator door
-	main_elevator.animated_sprite_2d.play("open")
-	await main_elevator.animated_sprite_2d.animation_finished
+	main_elevator.door.play("open")
+	await main_elevator.door.animation_finished
 	
 	# Player enters elevator
-	player.animated_sprite_2d.visible = false
-	
+	main_elevator.door.z_index=2
+
 	# Close elevator door
-	main_elevator.animated_sprite_2d.play("close")
-	await main_elevator.animated_sprite_2d.animation_finished
+	main_elevator.door.play("close")
+	await main_elevator.door.animation_finished
+	
+	camera_2d.position_smoothing_speed = 20.0 
 	
 	# Player collision is disbled
 	player.collision_shape_2d.disabled = true
@@ -55,6 +61,7 @@ func _on_floor_selected(floor):
 		Floor.TESTING:
 			target_position = testing_marker.global_position
 	
+	main_elevator.room.play("travel")
 	# Move player and elevator together
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -71,26 +78,32 @@ func _on_floor_selected(floor):
 		1.2
 	)
 	await tween.finished
-	
+	main_elevator.room.stop()
+	main_elevator.room.play("default")
 	# Update current floor
 	elevator_menu.current_floor = floor
 	elevator_menu.update_menu()
 	
 	# Player collision is enabled
 	player.collision_shape_2d.disabled = false
+	camera_2d.position_smoothing_speed = 7.0 
 	
 	# Open elevator door
-	main_elevator.animated_sprite_2d.play("open")
-	await main_elevator.animated_sprite_2d.animation_finished
+	main_elevator.door.play("open")
+	await main_elevator.door.animation_finished
 	
 	# Player exits elevator
-	player.animated_sprite_2d.visible = true
-	
-	# Close elevator door
-	main_elevator.animated_sprite_2d.play("close")
-	await main_elevator.animated_sprite_2d.animation_finished
+	main_elevator.door.z_index=1
+	main_elevator.access_text.visible = true
 	
 	# Restore player
+	player.velocity = Vector2.ZERO
 	player.controls_enabled = true
+	
+	# Close elevator door
+	main_elevator.door.play("close")
+	await main_elevator.door.animation_finished
+	
+	
 	
 	

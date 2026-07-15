@@ -17,9 +17,7 @@ func _ready():
 	Global.playerBody = self
 	
 func _physics_process(delta: float) -> void:
-	# Gravity
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	
 
 	# Knockback
 	#velocity += knockback
@@ -27,9 +25,12 @@ func _physics_process(delta: float) -> void:
 	
 	# Disable player controls (used for elevators, cutscenes, dialogue, etc.)
 	if !controls_enabled:
-		velocity.x = 0
-		move_and_slide()
+		velocity = Vector2.ZERO
 		return
+	
+	# Gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	
 	# Attack
 	if Input.is_action_just_pressed("attack") and !is_attacking:

@@ -12,7 +12,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3smsa"]
 radius = 8.0
-height = 50.0
+height = 49.15
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
 atlas = ExtResource("2_f1ek2")
@@ -407,7 +407,7 @@ position = Vector2(-2, -4)
 sprite_frames = SubResource("SpriteFrames_2hs0m")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.92911583
+frame_progress = 0.44255573
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=841616879]
 position = Vector2(1, 3)
