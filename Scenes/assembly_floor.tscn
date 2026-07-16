@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dku4hqg2f0ksa" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/Individual_PNGs/decor_5.png" id="6_m4oe5"]
 [ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://player/player_scene/player.tscn" id="8_7ht22"]
 [ext_resource type="PackedScene" uid="uid://tcllqok72o5v" path="res://Scenes/ground_enemy.tscn" id="9_041gb"]
-[ext_resource type="PackedScene" uid="uid://cb5mudf5wcgrp" path="res://Scenes/flying_enemy.tscn" id="10_fly"]
+[ext_resource type="PackedScene" uid="uid://b1ldkwdalk4qi" path="res://Scenes/flying_enemy_projectile.tscn" id="10_lnpb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48shv"]
 texture = ExtResource("1_vijy6")
@@ -1073,7 +1073,7 @@ scale = Vector2(1.7656268, 2.312501)
 texture = ExtResource("6_m4oe5")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("8_7ht22")]
-position = Vector2(320, 531)
+position = Vector2(1136, 436)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -1113,11 +1113,13 @@ polygon = PackedVector2Array(-800, 292, -640, 292, -640, 325, -800, 324)
 [node name="Node2D" type="Node2D" parent="." unique_id=1474075552]
 scale = Vector2(-1, 1)
 
-[node name="FlyingEnemy" parent="Node2D" unique_id=1594817251 instance=ExtResource("10_fly")]
-position = Vector2(-1048, -17)
+[node name="FlyingEnemyProjectile" parent="Node2D" unique_id=1471973617 instance=ExtResource("10_lnpb3")]
+position = Vector2(-1045, 11)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 
 [node name="GroundEnemy" parent="Node2D" unique_id=1920386209 instance=ExtResource("9_041gb")]
-position = Vector2(-482, 437)
+position = Vector2(-687, 437)
 
 [node name="GroundEnemy2" parent="Node2D" unique_id=600422145 instance=ExtResource("9_041gb")]
 position = Vector2(-2005, 214)

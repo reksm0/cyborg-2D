@@ -254,7 +254,7 @@ shape = SubResource("CircleShape2D_4gyqm")
 debug_color = Color(0.5208973, 0.56206846, 0.34421515, 0.41960785)
 
 [node name="RayY" type="RayCast2D" parent="." unique_id=1997111485]
-position = Vector2(37, 1)
+position = Vector2(17, 1)
 target_position = Vector2(0, 47)
 
 [node name="RayX" type="RayCast2D" parent="." unique_id=1723720455]
