@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cn6orak05d568"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://bya62gvliugli" path="res://images.jpg" id="2_4gyqm"]
+[ext_resource type="Texture2D" path="res://images.jpg" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
 size = Vector2(67, 34)
@@ -45,7 +44,6 @@ animations = [{
 radius = 90.0
 
 [node name="GroundEnemy" type="CharacterBody2D" unique_id=1920386209]
-script = ExtResource("1_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1491324122]
 position = Vector2(1.5, 5)
