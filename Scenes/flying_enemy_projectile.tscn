@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://b1ldkwdalk4qi"]
 
 [ext_resource type="Script" uid="uid://cu5gakp5p8dwy" path="res://Scripts/flying_enemy_projectile.gd" id="1_abt2t"]
+[ext_resource type="Shader" uid="uid://vfnmls7c0wrb" path="res://Shaders/flying_enemy_projectile.gdshader" id="1_ldqht"]
 [ext_resource type="Texture2D" uid="uid://cmvmnmdfljkp4" path="res://Assets/enemy/Drone/Drone.png" id="2_a0nct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_828wv"]
+shader = ExtResource("1_ldqht")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldqht"]
 atlas = ExtResource("2_a0nct")
@@ -242,6 +248,7 @@ radius = 170.24
 radius = 25.079872
 
 [node name="FlyingEnemyProjectile" type="CharacterBody2D" unique_id=1471973617]
+material = SubResource("ShaderMaterial_828wv")
 collision_layer = 2
 script = ExtResource("1_abt2t")
 
