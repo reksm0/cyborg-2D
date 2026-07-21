@@ -148,6 +148,10 @@ region = Rect2(512, 0, 32, 64)
 atlas = ExtResource("1_nxmxt")
 region = Rect2(544, 0, 32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nfk0"]
+atlas = ExtResource("1_cjcgs")
+region = Rect2(544, 0, 32, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mclmd"]
 animations = [{
 "frames": [{
@@ -267,6 +271,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nfk0")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2o5i"]
@@ -292,7 +304,7 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=218048233]
 sprite_frames = SubResource("SpriteFrames_mclmd")
-animation = &"deactivated"
+animation = &"inactive"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027046558]

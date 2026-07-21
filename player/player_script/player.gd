@@ -8,11 +8,15 @@ const JUMP_VELOCITY = -500.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var health := 5
+var max_health := 0
+var health := 0
 var is_attacking := false
 var controls_enabled := true
 
 func _ready():
+	health = GameState.player_health
+	max_health = GameState.player_max_health
+	
 	add_to_group("player")
 	Global.playerBody = self
 	
@@ -93,9 +97,10 @@ func update_animations(input_axis: float) -> void:
 
 func take_damage(amount: int, attacker_pos: Vector2) -> void:
 	health -= amount
-
+	GameState.player_health = health
+	
 	var dir = sign(global_position.x - attacker_pos.x)
-
+	
 	# Knockback
 	velocity = Vector2(dir * 450, -300)
 	if health <= 0:

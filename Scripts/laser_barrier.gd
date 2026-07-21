@@ -7,7 +7,10 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if GameState.awakening_panel_hacked:
+		animated_sprite_2d.play("inactive")
+		collision_shape_2d.set_deferred("disabled", true)
+		point_light_2d.energy = 0.0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

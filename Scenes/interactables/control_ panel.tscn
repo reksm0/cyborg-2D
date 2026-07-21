@@ -164,6 +164,10 @@ region = Rect2(576, 0, 32, 32)
 atlas = ExtResource("1_84xqn")
 region = Rect2(608, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bjsp"]
+atlas = ExtResource("1_af86p")
+region = Rect2(608, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1j2ri"]
 animations = [{
 "frames": [{
@@ -295,6 +299,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bjsp")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af86p"]
@@ -322,7 +334,7 @@ script = ExtResource("1_23m4l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=607051063]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1j2ri")
-animation = &"deactivated"
+animation = &"inactive"
 autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=210932701]

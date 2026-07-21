@@ -5,18 +5,22 @@ extends Node2D
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
 @onready var point_light_2d: PointLight2D = $PointLight2D
 var player_in_range = false
-var hacked = false
 signal hacked_successfully
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.visible = false
+	
+	if GameState.awakening_panel_hacked:
+		animated_sprite_2d.play("inactive")
+		point_light_2d.color = Color(0.0, 0.859, 1.0)
+		point_light_2d.energy = 0.5
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_prompt_position()
-	if hacked:
+	if GameState.awakening_panel_hacked:
 		return
 
 	if player_in_range and Input.is_action_just_pressed("interact"):
@@ -25,7 +29,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = true
-		if !hacked:
+		if !GameState.awakening_panel_hacked:
 			label.visible = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -34,7 +38,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		label.visible = false
 
 func start_hack():
-	hacked = true
+	GameState.awakening_panel_hacked = true
 	label.visible = false
 	# Start the deactivation animation
 	animated_sprite_2d.play("deactivated")

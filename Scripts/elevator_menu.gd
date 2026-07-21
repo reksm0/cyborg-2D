@@ -8,9 +8,6 @@ enum Floor {
 }
 var current_floor = Floor.DEVELOPMENT
 
-var ground_unlocked := false
-var has_encryption_key = false
-
 @onready var development_button: Button = $"Floor List/Development Wing"
 @onready var assembly_button: Button = $"Floor List/Assembly Wing"
 @onready var testing_button: Button = $"Floor List/Testing Wing"
@@ -57,7 +54,7 @@ func update_menu():
 		set_button(testing_button,ICON_GREEN,true)
 	
 	# Ground Exit
-	if ground_unlocked:
+	if GameState.ground_unlocked:
 		set_button(ground_button, ICON_GREEN, true)
 	else:
 		set_button(ground_button, ICON_RED, true)
@@ -76,12 +73,12 @@ func _on_testing_wing_pressed() -> void:
 
 func _on_ground_exit_pressed() -> void:
 	# Already unlocked
-	if ground_unlocked:
+	if GameState.ground_unlocked:
 		emit_signal("floor_selected", Floor.GROUND)
 		return
 	
 	# Player doesn't have the Encryption Key
-	if !has_encryption_key:
+	if !GameState.has_encryption_key:
 		print("Encryption Key Required")
 		return
 	
@@ -90,7 +87,7 @@ func _on_ground_exit_pressed() -> void:
 	print("   ENCRYPTION KEY ACCEPTED")
 	print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	
-	ground_unlocked = true
+	GameState.ground_unlocked = true
 	update_menu()
 	
 	await get_tree().create_timer(0.5).timeout
