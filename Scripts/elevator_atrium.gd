@@ -17,6 +17,9 @@ enum Floor {
 }
 
 func _ready() -> void:
+	
+	TransitionManager.apply_spawn(player, $"Transition Points")
+	
 	elevator_menu.floor_selected.connect(_on_floor_selected)
 	
 	elevator_menu.current_floor = GameState.elevator_current_floor
@@ -24,7 +27,7 @@ func _ready() -> void:
 	
 	var spawn_position = get_floor_position(GameState.elevator_current_floor)
 	main_elevator.global_position = spawn_position
-	player.global_position = spawn_position
+	
 
 func _process(delta):
 	pass

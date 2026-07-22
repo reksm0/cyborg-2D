@@ -25,6 +25,13 @@ var ground_unlocked := false
 
 # Elevator System
 var elevator_current_floor := Floor.DEVELOPMENT
+
+# Scene Transition
+var transition_spawn_marker := ""
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

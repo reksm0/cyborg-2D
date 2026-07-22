@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d1dnodi3eokgc" path="res://Scenes/interactables/main_elevator.tscn" id="3_8k04d"]
 [ext_resource type="PackedScene" uid="uid://b1ora47iqclny" path="res://Scenes/elevator_menu.tscn" id="3_w5fjm"]
 [ext_resource type="Texture2D" uid="uid://dllclykhfh4y8" path="res://Assets/environment/sci-fi platformer - free/full tile set 7-NEW4.png" id="4_anrea"]
+[ext_resource type="PackedScene" uid="uid://bari2vk1pfrbu" path="res://Scenes/triggers/scene_transition.tscn" id="8_8g356"]
 [ext_resource type="Texture2D" uid="uid://csa81lhj7giqe" path="res://Assets/environment/sci-fi platformer - free/railing 1.1.png" id="8_ytxhi"]
 [ext_resource type="Texture2D" uid="uid://dmrhormj3sepj" path="res://Assets/environment/sci-fi platformer - free/railing corner left2.png" id="11_gu3op"]
 
@@ -316,6 +317,16 @@ position = Vector2(1006, 1363)
 
 [node name="Testing Marker" type="Marker2D" parent="Elevator Markers" unique_id=725191846]
 position = Vector2(1006, 2771)
+
+[node name="Transition Points" type="Node2D" parent="." unique_id=820249305]
+
+[node name="awakening_lab_entrance" type="Marker2D" parent="Transition Points" unique_id=1341307718]
+position = Vector2(111.63, -45)
+
+[node name="scene_transition" parent="." unique_id=1905238090 instance=ExtResource("8_8g356")]
+position = Vector2(54, -42)
+destination_scene = "uid://c3m7fbk3urnia"
+destination_spawn_marker = "awakening_lab_exit"
 
 [node name="physics" type="TileMapLayer" parent="." unique_id=1285932340]
 z_index = 2
