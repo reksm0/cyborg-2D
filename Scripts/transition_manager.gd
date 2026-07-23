@@ -14,7 +14,7 @@ func transition_to(scene_path: String, spawn_marker: String) -> void:
 	GameState.transition_spawn_marker = spawn_marker
 	get_tree().change_scene_to_file(scene_path)
 
-func apply_spawn(player: Player, transition_points: Node2D) -> void:
+#func apply_spawn(player: Player, transition_points: Node2D) -> void:
 	if GameState.transition_spawn_marker.is_empty():
 		return
 
