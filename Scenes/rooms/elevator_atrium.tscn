@@ -278,10 +278,10 @@ tile_map_data = PackedByteArray("AAAiAPn/AwALAAAAAAAhAPn/AwALAAAAAAAdAPn/AwALAAA
 tile_set = SubResource("TileSet_5n763")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=504795599]
-offset_left = -83.0
-offset_top = -581.0
-offset_right = 2188.0
-offset_bottom = 4602.0
+offset_left = -455.0
+offset_top = -531.0
+offset_right = 1816.0
+offset_bottom = 4652.0
 color = Color(0.05882353, 0.050980393, 0.09019608, 0.5411765)
 
 [node name="Main elevator" parent="." unique_id=1368875976 instance=ExtResource("3_8k04d")]
