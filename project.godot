@@ -19,10 +19,10 @@ window/size/viewport_height=1080
 
 [autoload]
 
+TransitionManager="*uid://cakpivtrwfbiq"
 PlayerHud="*uid://dwkot8ord1m11"
 Global="*uid://boa26d26fy5em"
 GameState="*uid://foac2kkj7div"
-TransitionManager="*uid://cakpivtrwfbiq"
 
 [display]
 
