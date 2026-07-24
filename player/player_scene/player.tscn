@@ -58,10 +58,6 @@ region = Rect2(453, 0, 151, 128)
 atlas = ExtResource("4_gymyn")
 region = Rect2(604, 0, 151, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhrjy"]
-atlas = ExtResource("4_tx1dd")
-region = Rect2(284, 0, 71, 67)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("3_f1ek2")
 region = Rect2(0, 0, 71, 67)
@@ -252,10 +248,7 @@ animations = [{
 "name": &"dodge",
 "speed": 8.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nhrjy")
-}],
+"frames": [],
 "loop": true,
 "name": &"fall",
 "speed": 5.0

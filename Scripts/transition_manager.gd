@@ -12,22 +12,33 @@ func _process(delta: float) -> void:
 
 func transition_to(scene_path: String, spawn_marker: String) -> void:
 	GameState.transition_spawn_marker = spawn_marker
+	call_deferred("_change_scene", scene_path)
+
+
+func _change_scene(scene_path: String) -> void:
 	get_tree().change_scene_to_file(scene_path)
 
 func apply_spawn(player: Player, transition_points: Node2D) -> void:
+	print("--------------------------------")
+	print("Spawn marker =", GameState.transition_spawn_marker)
+
+	print("Markers available:")
+
+	for child in transition_points.get_children():
+		print(child.name)
+
 	if GameState.transition_spawn_marker.is_empty():
+		print("EMPTY")
 		return
 
-	var marker := transition_points.get_node_or_null(
+	var marker = transition_points.get_node_or_null(
 		GameState.transition_spawn_marker
-	) as Marker2D
+	)
 
-	if marker:
-		player.global_position = marker.global_position
+	if marker == null:
+		print("NOT FOUND")
 	else:
-		push_warning(
-			"Spawn marker '%s' not found." %
-			GameState.transition_spawn_marker
-		)
+		print("FOUND:", marker.name)
+		player.global_position = marker.global_position
 
 	GameState.transition_spawn_marker = ""
