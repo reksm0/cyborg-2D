@@ -293,7 +293,7 @@ visible = false
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("2_8k04d")]
 z_index = 1
-position = Vector2(1006, -44.675)
+position = Vector2(115, 2771)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -321,29 +321,29 @@ position = Vector2(1006, 2771)
 [node name="Transition Points" type="Node2D" parent="." unique_id=820249305]
 
 [node name="awakening_lab_entrance" type="Marker2D" parent="Transition Points" unique_id=1341307718]
-position = Vector2(111.63, -45)
+position = Vector2(118.63, -45)
 
 [node name="assembly_wing_entrance" type="Marker2D" parent="Transition Points" unique_id=1493153393]
-position = Vector2(1902, 1365)
+position = Vector2(1901, 1363)
 
 [node name="testing_wing_entrance" type="Marker2D" parent="Transition Points" unique_id=1949743961]
-position = Vector2(111.625, 2771)
+position = Vector2(115.625, 2771)
 
 [node name="Transition Areas" type="Node2D" parent="." unique_id=1562680372]
 position = Vector2(-1754, 61)
 
 [node name="scene_transition_to_awakening_lab" parent="Transition Areas" unique_id=1905238090 instance=ExtResource("8_8g356")]
-position = Vector2(1802, -103)
+position = Vector2(1838, -103)
 destination_scene = "uid://c3m7fbk3urnia"
 destination_spawn_marker = "awakening_lab_exit"
 
 [node name="scene_transition_to_assembly_wing" parent="Transition Areas" unique_id=34333993 instance=ExtResource("8_8g356")]
-position = Vector2(3733, 1304)
+position = Vector2(3689, 1304)
 destination_scene = "uid://d2pkjtor72xp1"
 destination_spawn_marker = "assembly_wing_exit"
 
 [node name="scene_transition_to_testing_wing" parent="Transition Areas" unique_id=2059250962 instance=ExtResource("8_8g356")]
-position = Vector2(1795, 2710)
+position = Vector2(1836, 2713)
 destination_scene = "uid://bt2rfy82r76uq"
 destination_spawn_marker = "testing_wing_exit"
 

@@ -373,7 +373,7 @@ scale = Vector2(0.175, 0.175)
 texture = ExtResource("6_sruj3")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("7_pkowy")]
-position = Vector2(407, 339)
+position = Vector2(396, 47)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -409,7 +409,7 @@ shadow_filter_smooth = 6.1
 shadow_item_cull_mask = 3
 
 [node name="scene_transition" parent="." unique_id=1905238090 instance=ExtResource("8_mji4w")]
-position = Vector2(1014, 339)
+position = Vector2(1007.99994, 339)
 scale = Vector2(0.8399805, 0.84000003)
 destination_scene = "uid://d4aj67ge5qty4"
 destination_spawn_marker = "awakening_lab_entrance"
@@ -417,6 +417,6 @@ destination_spawn_marker = "awakening_lab_entrance"
 [node name="Transition Points" type="Node2D" parent="." unique_id=607123716]
 
 [node name="awakening_lab_exit" type="Marker2D" parent="Transition Points" unique_id=1171221018]
-position = Vector2(979, 339)
+position = Vector2(977, 339)
 
 [connection signal="hacked_successfully" from="Interactable Decors/Control panel" to="Interactable Decors/Laser barrier" method="_on_control_panel_hacked_successfully"]
