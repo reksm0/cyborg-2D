@@ -23,6 +23,7 @@ TransitionManager="*uid://cakpivtrwfbiq"
 PlayerHud="*uid://dwkot8ord1m11"
 Global="*uid://boa26d26fy5em"
 GameState="*uid://foac2kkj7div"
+FadeLayer="*uid://dxeqyg7j2r5d3"
 
 [display]
 

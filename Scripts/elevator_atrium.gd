@@ -18,7 +18,7 @@ enum Floor {
 
 func _ready() -> void:
 	
-	TransitionManager.apply_spawn(player, $"Transition Points")
+	TransitionManager.apply_spawn(player, camera_2d, $"Transition Points")
 	
 	elevator_menu.floor_selected.connect(_on_floor_selected)
 	

@@ -373,7 +373,7 @@ scale = Vector2(0.175, 0.175)
 texture = ExtResource("6_sruj3")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("7_pkowy")]
-position = Vector2(396, 47)
+position = Vector2(411, 327)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 

@@ -16,9 +16,12 @@ func transition_to(scene_path: String, spawn_marker: String) -> void:
 
 
 func _change_scene(scene_path: String) -> void:
+	await FadeLayer.fade_out()
 	get_tree().change_scene_to_file(scene_path)
+	await get_tree().process_frame
+	await FadeLayer.fade_in()
 
-func apply_spawn(player: Player, transition_points: Node2D) -> void:
+func apply_spawn(player: Player, camera: Camera2D, transition_points: Node2D) -> void:
 	print("--------------------------------")
 	print("Spawn marker =", GameState.transition_spawn_marker)
 
@@ -40,5 +43,6 @@ func apply_spawn(player: Player, transition_points: Node2D) -> void:
 	else:
 		print("FOUND:", marker.name)
 		player.global_position = marker.global_position
+		camera.reset_smoothing()
 
 	GameState.transition_spawn_marker = ""
