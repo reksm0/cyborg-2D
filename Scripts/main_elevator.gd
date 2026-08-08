@@ -13,6 +13,9 @@ var player_in_range = false
 func _ready() -> void:
 	label.visible = false
 	access_text.visible = false
+	
+	if GameState.main_elevator_hacked:
+		door.play("default")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,6 +29,7 @@ func _process(delta: float) -> void:
 
 
 	if player_in_range and Input.is_action_just_pressed("interact") and !GameState.main_elevator_hacked:
+		door.play("default")
 		GameState.main_elevator_hacked = true
 		label.visible = false
 		access_text.visible = true

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqf0xix2b7mre" path="res://Scripts/main_elevator.gd" id="1_xhhkf"]
 [ext_resource type="Texture2D" uid="uid://rvk4akqsaynf" path="res://Assets/environment/elevator/elevator  whole.png" id="2_e81x6"]
 [ext_resource type="Texture2D" uid="uid://drx3ygoge5xed" path="res://Assets/environment/elevator/elevator door posthack.png" id="3_arijx"]
+[ext_resource type="Texture2D" uid="uid://uu5yuybwmn1f" path="res://Assets/environment/elevator/elevator door prehack.png" id="4_e81x6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r57j8"]
 atlas = ExtResource("2_e81x6")
@@ -116,6 +117,10 @@ region = Rect2(0, 0, 98, 96)
 atlas = ExtResource("3_arijx")
 region = Rect2(0, 0, 98, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut5d7"]
+atlas = ExtResource("4_e81x6")
+region = Rect2(0, 0, 98, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e81x6"]
 atlas = ExtResource("3_arijx")
 region = Rect2(0, 0, 98, 96)
@@ -183,7 +188,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut5d7")
+}],
 "loop": true,
 "name": &"hacked",
 "speed": 5.0
@@ -233,7 +241,8 @@ z_index = 1
 position = Vector2(22, -8)
 scale = Vector2(4.05, 4)
 sprite_frames = SubResource("SpriteFrames_hstmi")
-autoplay = "default"
+autoplay = "hacked"
+frame_progress = 0.47563958
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858424060]
 position = Vector2(24, -76)
