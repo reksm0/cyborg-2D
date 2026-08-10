@@ -385,7 +385,7 @@ animations = [{
 }]
 
 [sub_resource type="Gradient" id="Gradient_nhrjy"]
-offsets = PackedFloat32Array(0.13370474, 0.6518106, 1)
+offsets = PackedFloat32Array(0.13370474, 0.4738372, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.30915534, 0.30915534, 0.30915534, 1, 0.025069654, 0.025069654, 0.025069654, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qsl6v"]
@@ -394,13 +394,20 @@ width = 58
 height = 99
 use_hdr = true
 fill = 1
-fill_from = Vector2(0.48290598, 0.51282054)
-fill_to = Vector2(0.7094017, 0.22222222)
+fill_from = Vector2(0.48872682, 0.44871798)
+fill_to = Vector2(0.8315651, 0.1794872)
 
 [node name="player" type="CharacterBody2D" unique_id=1760406672 groups=["player"]]
 position = Vector2(601, 283)
 collision_layer = 2
 script = ExtResource("1_3smsa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1459316482]
+visible = false
+offset_left = -27.0
+offset_top = -27.0
+offset_right = 26.0
+offset_bottom = 36.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1836328658]
 position = Vector2(0, 5)
@@ -416,8 +423,18 @@ frame = 1
 frame_progress = 0.84518987
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=841616879]
-position = Vector2(1, 3)
-color = Color(0.6784314, 0.15686275, 0.654902, 1)
+position = Vector2(-0.4999969, 1.0000169)
+scale = Vector2(0.84482783, 0.5858586)
+color = Color(1, 0.9254902, 0, 1)
 energy = 0.6
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_qsl6v")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=985432518]
+visible = false
+position = Vector2(-1.0000162, -14.99999)
+scale = Vector2(0.31034487, 0.1691917)
+color = Color(0.77254903, 0.101960786, 0.91764706, 1)
+energy = 0.3
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_qsl6v")

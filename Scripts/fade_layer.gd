@@ -1,7 +1,12 @@
 extends CanvasLayer
 
 @onready var fade_rect: ColorRect = $ColorRect
+
 const FADE_TIME := 0.35
+
+func set_fade_color(color: Color) -> void:
+	fade_rect.color = color
+
 
 func fade_out() -> void:
 	var tween = create_tween()
@@ -25,10 +30,5 @@ func fade_in() -> void:
 	await tween.finished
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 	pass

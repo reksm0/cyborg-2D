@@ -432,7 +432,7 @@ visible = false
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("2_8k04d")]
 z_index = 1
-position = Vector2(1013, 659)
+position = Vector2(163.00006, -49)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 

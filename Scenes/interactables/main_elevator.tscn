@@ -231,6 +231,7 @@ light_mask = 4
 script = ExtResource("1_xhhkf")
 
 [node name="room" type="AnimatedSprite2D" parent="." unique_id=651480827]
+light_mask = 4
 position = Vector2(8, -184)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ursi0")
@@ -238,12 +239,13 @@ autoplay = "default"
 frame_progress = 0.8093224
 
 [node name="door" type="AnimatedSprite2D" parent="." unique_id=936173877]
+light_mask = 4
 z_index = 1
 position = Vector2(22, -8)
 scale = Vector2(4.05, 4)
 sprite_frames = SubResource("SpriteFrames_hstmi")
 autoplay = "hacked"
-frame_progress = 0.00063000125
+frame_progress = 0.15589622
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858424060]
 position = Vector2(24, -76)

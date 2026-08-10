@@ -8,6 +8,10 @@ extends Node2D
 @onready var assembly_marker: Marker2D = $"Elevator Markers/Assembly Marker"
 @onready var testing_marker: Marker2D = $"Elevator Markers/Testing Marker"
 @onready var camera_2d: Camera2D = $player/Camera2D
+@onready var world_environment: WorldEnvironment = $Lighting/WorldEnvironment
+const NORMAL_EXPOSURE := 0.8
+const FLASH_EXPOSURE := 8
+const EXPOSURE_RECOVERY_TIME := 0.8
 
 enum Floor {
 	DEVELOPMENT,
@@ -128,3 +132,15 @@ func _on_floor_selected(floor):
 	# Close elevator door
 	main_elevator.door.play("close")
 	await main_elevator.door.animation_finished
+
+
+func play_light_transition() -> void:
+	world_environment.environment.tonemap_exposure = FLASH_EXPOSURE
+
+	var tween := create_tween()
+	tween.tween_property(
+		world_environment.environment,
+		"tonemap_exposure",
+		NORMAL_EXPOSURE,
+		EXPOSURE_RECOVERY_TIME
+	)
