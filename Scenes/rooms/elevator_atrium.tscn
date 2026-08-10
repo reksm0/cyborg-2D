@@ -432,7 +432,7 @@ visible = false
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("2_8k04d")]
 z_index = 1
-position = Vector2(157.00006, -59)
+position = Vector2(1013, 659)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -750,3 +750,5 @@ offset_right = 20.010773
 offset_bottom = 27.080992
 scale = Vector2(43.032017, 28.93892)
 color = Color(0, 0, 0, 0.33333334)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1036148432]
