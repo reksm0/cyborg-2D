@@ -316,6 +316,7 @@ position = Vector2(11.111095, -5.357182)
 scale = Vector2(3.6997254, 3.5156248)
 color = Color(0.13006505, 0.7496484, 0.086356975, 1)
 range_item_cull_mask = 3
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_chqt2")
 
 [node name="Computer" type="Sprite2D" parent="Decors" unique_id=1227087757]

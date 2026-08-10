@@ -227,6 +227,7 @@ animations = [{
 size = Vector2(10.75, 14.5)
 
 [node name="Main elevator" type="Node2D" unique_id=1368875976]
+light_mask = 4
 script = ExtResource("1_xhhkf")
 
 [node name="room" type="AnimatedSprite2D" parent="." unique_id=651480827]
@@ -242,7 +243,7 @@ position = Vector2(22, -8)
 scale = Vector2(4.05, 4)
 sprite_frames = SubResource("SpriteFrames_hstmi")
 autoplay = "hacked"
-frame_progress = 0.47563958
+frame_progress = 0.00063000125
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858424060]
 position = Vector2(24, -76)
