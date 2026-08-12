@@ -351,6 +351,7 @@ scale = Vector2(3.6997254, 3.5156248)
 color = Color(1.5720325, 0.17497085, 0.16892296, 1)
 energy = 0.77
 range_item_cull_mask = 3
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_8bjsp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=60705166]

@@ -1076,7 +1076,7 @@ scale = Vector2(1.7656268, 2.312501)
 texture = ExtResource("6_m4oe5")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("8_7ht22")]
-position = Vector2(379, 516)
+position = Vector2(180, 531)
 scale = Vector2(1.5, 1.5)
 transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 metadata/_edit_group_ = true
@@ -1138,9 +1138,9 @@ position = Vector2(-1087, 915)
 [node name="Transition Points" type="Node2D" parent="." unique_id=585039261]
 
 [node name="assembly_wing_exit" type="Marker2D" parent="Transition Points" unique_id=1713889510]
-position = Vector2(152, 528)
+position = Vector2(181, 531)
 
 [node name="scene_transition" parent="." unique_id=1905238090 instance=ExtResource("11_fjlgi")]
-position = Vector2(106, 532)
+position = Vector2(148, 532)
 destination_scene = "uid://d4aj67ge5qty4"
 destination_spawn_marker = "assembly_wing_entrance"

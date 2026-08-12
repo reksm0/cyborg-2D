@@ -228,7 +228,7 @@ sources/10 = SubResource("TileSetAtlasSource_5avpu")
 script = ExtResource("1_5avpu")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("2_w0hv6")]
-position = Vector2(39, 947)
+position = Vector2(12, 947)
 scale = Vector2(1.5, 1.5)
 metadata/_edit_group_ = true
 
@@ -250,10 +250,10 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(-21, -18)
 
 [node name="testing_wing_exit" type="Marker2D" parent="Transition Points" unique_id=1375480706]
-position = Vector2(60, 963)
+position = Vector2(32, 965)
 
 [node name="scene_transition" parent="." unique_id=1905238090 instance=ExtResource("8_5avpu")]
-position = Vector2(84, 951)
+position = Vector2(49, 949)
 destination_scene = "uid://d4aj67ge5qty4"
 destination_spawn_marker = "testing_wing_entrance"
 

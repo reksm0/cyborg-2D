@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 	pass
 
 func deactivate():
-	print("Laser Disabled")
 	animated_sprite_2d.play("deactivated")
+	
 	var tween = create_tween()
 	tween.tween_property(
 		point_light_2d,
@@ -27,6 +27,7 @@ func deactivate():
 		0.0,
 		2.3
 	)
+	await animated_sprite_2d.animation_finished
 	collision_shape_2d.set_deferred("disabled", true)
 
 
