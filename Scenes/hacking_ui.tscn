@@ -360,6 +360,7 @@ red_arrow_sheet = ExtResource("4_quvuf")
 red_symbol_sheet = ExtResource("5_quvuf")
 
 [node name="HackingPanel" type="PanelContainer" parent="." unique_id=1410910712]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -383,7 +384,7 @@ position = Vector2(32, 64)
 sprite_frames = SubResource("SpriteFrames_00lo7")
 animation = &"blue"
 autoplay = "blue"
-frame_progress = 0.8413415
+frame_progress = 0.1398957
 
 [node name="MiddleRed" type="TextureRect" parent="HackingPanel/PanelContent" unique_id=1940663459]
 visible = false
@@ -405,7 +406,7 @@ position = Vector2(224, 64)
 sprite_frames = SubResource("SpriteFrames_fiwc8")
 animation = &"blue"
 autoplay = "blue"
-frame_progress = 0.074844815
+frame_progress = 0.37335786
 
 [node name="SequenceContainer" type="HBoxContainer" parent="HackingPanel/PanelContent" unique_id=943022656]
 layout_mode = 0
