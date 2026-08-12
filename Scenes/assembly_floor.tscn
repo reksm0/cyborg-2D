@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://d2pkjtor72xp1"]
 
+[ext_resource type="Script" uid="uid://ca1r60i6iseed" path="res://Scripts/assembly_wing.gd" id="1_lnpb3"]
 [ext_resource type="Texture2D" uid="uid://qcmjvbqkqjwj" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_vijy6"]
 [ext_resource type="Texture2D" uid="uid://bxm2schc83cyy" path="res://Assets/environment/boxes_3.png" id="2_byucd"]
 [ext_resource type="Texture2D" uid="uid://btej388uviprh" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Decor/Individual_PNGs/decor_6.png" id="3_7ht22"]
@@ -944,6 +945,7 @@ sources/1 = SubResource("TileSetAtlasSource_fjlgi")
 
 [node name="AssemblyFloor" type="Node2D" unique_id=900521338]
 position = Vector2(-171, 124)
+script = ExtResource("1_lnpb3")
 
 [node name="Background" type="TileMapLayer" parent="." unique_id=1330177514]
 scale = Vector2(-1, 1)

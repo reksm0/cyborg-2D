@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bt2rfy82r76uq"]
 
 [ext_resource type="Texture2D" uid="uid://dl8x5dj4dpi1q" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/laser_idle.png" id="1_4tcrr"]
+[ext_resource type="Script" uid="uid://8ghq8yqpjiua" path="res://Scripts/testing_wing.gd" id="1_5avpu"]
 [ext_resource type="Texture2D" uid="uid://qcmjvbqkqjwj" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Tileset/level_tileset.png" id="1_675wd"]
 [ext_resource type="Texture2D" uid="uid://m2tcepjgw4n0" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/electric_turret.png" id="2_6yurk"]
 [ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://player/player_scene/player.tscn" id="2_w0hv6"]
@@ -224,6 +225,7 @@ sources/9 = SubResource("TileSetAtlasSource_peyes")
 sources/10 = SubResource("TileSetAtlasSource_5avpu")
 
 [node name="Testing Wing" type="Node2D" unique_id=81770842]
+script = ExtResource("1_5avpu")
 
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("2_w0hv6")]
 position = Vector2(39, 947)
