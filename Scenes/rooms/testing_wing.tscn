@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://m2tcepjgw4n0" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/electric_turret.png" id="2_6yurk"]
 [ext_resource type="PackedScene" uid="uid://b67kci4ejpk7m" path="res://player/player_scene/player.tscn" id="2_w0hv6"]
 [ext_resource type="Texture2D" uid="uid://vse7sm1v0ueo" path="res://Assets/environment/Foozle_2DT0001_Science_Fiction_Labs_Tileset/Traps/wall_blades.png" id="3_4tcrr"]
-[ext_resource type="PackedScene" uid="uid://dgmwlmvjr8o8d" path="res://Scenes/interactables/control_ panel.tscn" id="6_iq4ad"]
 [ext_resource type="PackedScene" uid="uid://bari2vk1pfrbu" path="res://Scenes/triggers/scene_transition.tscn" id="8_5avpu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5avpu"]
@@ -241,10 +240,6 @@ limit_right = -1
 limit_bottom = 1151
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
-
-[node name="Control panel" parent="." unique_id=966204719 instance=ExtResource("6_iq4ad")]
-position = Vector2(-893, 192)
-scale = Vector2(0.5, 0.5)
 
 [node name="Transition Points" type="Node2D" parent="." unique_id=758725657]
 position = Vector2(-21, -18)

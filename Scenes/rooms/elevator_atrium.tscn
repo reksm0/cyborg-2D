@@ -1315,3 +1315,8 @@ shape = SubResource("RectangleShape2D_2xskt")
 process_priority = 1
 position = Vector2(1403, 2662)
 shape = SubResource("RectangleShape2D_2xskt")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node2D2/StaticBody2D" unique_id=1445715344]
+process_priority = 1
+position = Vector2(1992, -206)
+shape = SubResource("RectangleShape2D_2xskt")
