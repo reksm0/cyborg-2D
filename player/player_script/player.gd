@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+signal health_changed(current_health, max_health)
+
 const SPEED = 170.0
 const JUMP_VELOCITY = -500.0
 
@@ -8,17 +10,27 @@ const JUMP_VELOCITY = -500.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var max_health := 0
-var health := 0
+<<<<<<< Updated upstream
+var max_health := 100
+var health := 100
+=======
+const MAX_HEALTH := 5
+
+var health := MAX_HEALTH
+>>>>>>> Stashed changes
 var is_attacking := false
 var controls_enabled := true
+var is_dead := false
 
 func _ready():
-	health = GameState.player_health
-	max_health = GameState.player_max_health
-	
 	add_to_group("player")
 	Global.playerBody = self
+
+<<<<<<< Updated upstream
+	health_changed.emit(health, max_health)
+=======
+	PlayerHud.update_health_bar(health, MAX_HEALTH)
+>>>>>>> Stashed changes
 	
 func _physics_process(delta: float) -> void:
 	
@@ -97,12 +109,18 @@ func update_animations(input_axis: float) -> void:
 
 func take_damage(amount: int, attacker_pos: Vector2) -> void:
 	health -= amount
-	GameState.player_health = health
-	
+	health = clamp(health, 0, max_health)
+
+	health_changed.emit(health, max_health)
+
+<<<<<<< Updated upstream
+=======
+	PlayerHud.update_health_bar(health, MAX_HEALTH)
+
+>>>>>>> Stashed changes
 	var dir = sign(global_position.x - attacker_pos.x)
-	
-	# Knockback
 	velocity = Vector2(dir * 450, -300)
+
 	if health <= 0:
 		die()
 

@@ -46,7 +46,7 @@ texture = ExtResource("1_hbrno")
 region_rect = Rect2(0, 0, 40, 20)
 patch_margin_left = 27
 patch_margin_right = 7
-axis_stretch_horizontal = 1
+axis_stretch_horizontal = 2
 
 [node name="HPBar" type="TextureProgressBar" parent="Control/HPMarginContainer/NinePatchRect" unique_id=1333000154]
 show_behind_parent = true
@@ -54,10 +54,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.2440001
 anchor_bottom = 1.3620001
-offset_left = 18.999998
-offset_top = 6.0000005
-offset_right = -61.94079
-offset_bottom = 3.2009506
+offset_left = 18.668728
+offset_top = 6.150131
+offset_right = -62.97103
+offset_bottom = 3.3510818
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.898837, 0.24548963)

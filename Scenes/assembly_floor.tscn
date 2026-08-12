@@ -1078,6 +1078,7 @@ texture = ExtResource("6_m4oe5")
 [node name="player" parent="." unique_id=1760406672 instance=ExtResource("8_7ht22")]
 position = Vector2(180, 531)
 scale = Vector2(1.5, 1.5)
+transform = Transform2D(1.5, 0, 0, 1.5, 0, 0)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=76565079]
