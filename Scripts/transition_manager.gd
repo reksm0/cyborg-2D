@@ -46,11 +46,6 @@ func apply_spawn(
 	transition_points: Node2D
 ) -> void:
 
-	print("Markers available:")
-
-	for child in transition_points.get_children():
-		print(child.name)
-
 	if GameState.transition_spawn_marker.is_empty():
 		return
 

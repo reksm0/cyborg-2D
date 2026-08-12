@@ -1,13 +1,14 @@
 extends CanvasLayer
 
+
 # Node references — adjust path if your tree differs
-@onready var button_new_game = $"Control/mainmenu/new game"
-@onready var button_continue = $Control/mainmenu/continue
-@onready var button_credits  = $Control/mainmenu/credits
-@onready var button_exit     = $Control/mainmenu/exit
+@onready var button_new_game = $Control/mainmenu/Button1
+@onready var button_continue = $Control/mainmenu/Button2
+@onready var button_credits  = $Control/mainmenu/Button3
+@onready var button_exit     = $Control/mainmenu/Button4
 
 # Scene paths — change these to match your actual file locations
-const GAME_SCENE_PATH = "res://Scenes/rooms/awakening_lab.tscn"
+const GAME_SCENE_PATH = "res://Scenes/rooms/awake.tscn"
 const CREDITS_SCENE_PATH = "res://Scenes/UI/credits.tscn"
 
 func _ready():
@@ -16,6 +17,8 @@ func _ready():
 	button_continue.pressed.connect(_on_continue_pressed)
 	button_credits.pressed.connect(_on_credits_pressed)
 	button_exit.pressed.connect(_on_exit_pressed)
+	#func _on_button1_pressed():
+	#get_tree().change_scene_to_file("res://Scenes/rooms/awakening_lab.tscn".tscn")
 
 	# Disable Continue button if no save file exists
 	button_continue.disabled = not FileAccess.file_exists("user://savegame.save")
