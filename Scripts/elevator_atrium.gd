@@ -91,14 +91,14 @@ func _on_floor_selected(floor):
 		player,
 		"global_position",
 		target_position,
-		1.2
+		2
 	)
 	
 	tween.tween_property(
 		main_elevator,
 		"global_position",
 		target_position,
-		1.2
+		2
 	)
 	
 	await tween.finished

@@ -245,7 +245,7 @@ position = Vector2(22, -8)
 scale = Vector2(4.05, 4)
 sprite_frames = SubResource("SpriteFrames_hstmi")
 autoplay = "hacked"
-frame_progress = 0.15589622
+frame_progress = 0.09872034
 
 [node name="Area2D" type="Area2D" parent="." unique_id=858424060]
 position = Vector2(24, -76)
