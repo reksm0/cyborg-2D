@@ -89,3 +89,5 @@ theme_override_font_sizes/font_size = 90
 text = "exit
 
 "
+
+[connection signal="pressed" from="Control/mainmenu/Button3" to="." method="_on_button_3_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cgoy4nkdd47f1"]
+[gd_scene format=3 uid="uid://32h5x010xkck"]
 
 [node name="PlayerHud" type="CanvasLayer" unique_id=573977630]
 process_mode = 3

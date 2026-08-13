@@ -12,7 +12,7 @@ func _ready() -> void:
 func update_health_bar( hp:float, max_hp:float ) -> void:
 	var value : float=(hp/max_hp)*100
 	hp_bar.value=value
-	hp_margin_container.size.x = max_hp + 22
+	#hp_margin_container.size.x = max_hp + 22
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
