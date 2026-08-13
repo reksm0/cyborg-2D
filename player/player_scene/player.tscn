@@ -426,15 +426,6 @@ frame_progress = 0.84518987
 position = Vector2(-0.4999969, 1.0000169)
 scale = Vector2(0.84482783, 0.5858586)
 color = Color(1, 0.9254902, 0, 1)
-energy = 0.6
-range_item_cull_mask = 3
-texture = SubResource("GradientTexture2D_qsl6v")
-
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=985432518]
-visible = false
-position = Vector2(-1.0000162, -14.99999)
-scale = Vector2(0.31034487, 0.1691917)
-color = Color(0.77254903, 0.101960786, 0.91764706, 1)
-energy = 0.3
+energy = 0.4
 range_item_cull_mask = 3
 texture = SubResource("GradientTexture2D_qsl6v")

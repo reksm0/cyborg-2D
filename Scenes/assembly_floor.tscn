@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://tcllqok72o5v" path="res://Scenes/ground_enemy.tscn" id="9_041gb"]
 [ext_resource type="PackedScene" uid="uid://b1ldkwdalk4qi" path="res://Scenes/flying_enemy_projectile.tscn" id="10_lnpb3"]
 [ext_resource type="PackedScene" uid="uid://bari2vk1pfrbu" path="res://Scenes/triggers/scene_transition.tscn" id="11_fjlgi"]
+[ext_resource type="Texture2D" uid="uid://blfnfg80npbad" path="res://Assets/environment/assembly_floor_lights.png" id="13_84fye"]
+[ext_resource type="Texture2D" uid="uid://od0d1fwexkwv" path="res://Assets/environment/light_texture.png" id="14_pdd0t"]
+[ext_resource type="Texture2D" uid="uid://d4bdles2ciq58" path="res://Assets/environment/light_texture_2.png" id="15_pdd0t"]
+[ext_resource type="Texture2D" uid="uid://cgeypgok8efwu" path="res://Assets/environment/sci-fi platformer - free/player.png" id="16_iq3jk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48shv"]
 texture = ExtResource("1_vijy6")
@@ -944,8 +948,77 @@ tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_fjlgi")
 
 [sub_resource type="Environment" id="Environment_lnpb3"]
+background_mode = 3
 tonemap_mode = 1
-tonemap_exposure = 0.81
+tonemap_exposure = 0.58
+
+[sub_resource type="Gradient" id="Gradient_iq3jk"]
+offsets = PackedFloat32Array(0, 0.48218527, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.80047506, 0.80047506, 0.80047506, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yhsp1"]
+gradient = SubResource("Gradient_iq3jk")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0.535)
+metadata/_snap_enabled = true
+metadata/_snap_count = 40
+
+[sub_resource type="Gradient" id="Gradient_pdd0t"]
+offsets = PackedFloat32Array(0, 0.18527316, 0.28978622, 0.6840855)
+colors = PackedColorArray(1, 1, 1, 1, 0.8993056, 0.8993056, 0.8993056, 1, 0.5866898, 0.5866898, 0.5866898, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iq3jk"]
+gradient = SubResource("Gradient_pdd0t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+metadata/_snap_count = 40
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhsp1"]
+atlas = ExtResource("16_iq3jk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue7lp"]
+atlas = ExtResource("16_iq3jk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqb4p"]
+atlas = ExtResource("16_iq3jk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuaib"]
+atlas = ExtResource("16_iq3jk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p52gk"]
+atlas = ExtResource("16_iq3jk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3y0ih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhsp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue7lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqb4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuaib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p52gk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="AssemblyFloor" type="Node2D" unique_id=900521338]
 position = Vector2(-171, 124)
@@ -1079,21 +1152,6 @@ position = Vector2(-974.99994, 891.00006)
 scale = Vector2(1.7656268, 2.312501)
 texture = ExtResource("6_m4oe5")
 
-[node name="player" parent="." unique_id=1760406672 instance=ExtResource("8_7ht22")]
-position = Vector2(180, 531)
-scale = Vector2(1.5, 1.5)
-metadata/_edit_group_ = true
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=76565079]
-position = Vector2(0, -34)
-zoom = Vector2(3, 3)
-limit_left = 21
-limit_top = 28
-limit_right = 2005
-limit_bottom = 1084
-position_smoothing_enabled = true
-position_smoothing_speed = 7.0
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2008809713]
 visible = false
 scale = Vector2(-1, 1)
@@ -1123,7 +1181,6 @@ position = Vector2(-384, -36)
 polygon = PackedVector2Array(-800, 292, -640, 292, -640, 325, -800, 324)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1474075552]
-visible = false
 scale = Vector2(-1, 1)
 
 [node name="FlyingEnemyProjectile" parent="Node2D" unique_id=1471973617 instance=ExtResource("10_lnpb3")]
@@ -1136,9 +1193,6 @@ position = Vector2(-687, 437)
 
 [node name="GroundEnemy2" parent="Node2D" unique_id=600422145 instance=ExtResource("9_041gb")]
 position = Vector2(-2005, 214)
-
-[node name="GroundEnemy3" parent="Node2D" unique_id=952787946 instance=ExtResource("9_041gb")]
-position = Vector2(-1087, 915)
 
 [node name="Transition Points" type="Node2D" parent="." unique_id=585039261]
 
@@ -1154,9 +1208,455 @@ destination_spawn_marker = "assembly_wing_entrance"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lighting" unique_id=680861099]
 color = Color(0, 0, 0, 1)
+range_item_cull_mask = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Lighting" unique_id=98857976]
-color = Color(0.3599303, 0.38769352, 0.46704978, 1)
+color = Color(0.29604852, 0.32028648, 0.3897199, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting" unique_id=1678147263]
 environment = SubResource("Environment_lnpb3")
+
+[node name="LightSources" type="Node2D" parent="Lighting" unique_id=1017177410]
+
+[node name="CeilingLight" type="Node2D" parent="Lighting/LightSources" unique_id=88489939]
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingLight" unique_id=217557138]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(64, 144, 248, 96)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingLight" unique_id=1706086794]
+position = Vector2(698.49994, 389.37653)
+scale = Vector2(1.6452651, 1.0866739)
+energy = 0.6
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingLight2" type="Node2D" parent="Lighting/LightSources" unique_id=1537025631]
+position = Vector2(631, 64)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingLight2" unique_id=456408092]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(64, 144, 248, 96)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingLight2" unique_id=1374740435]
+position = Vector2(698.49994, 377.37653)
+scale = Vector2(1.6452651, 0.89665025)
+energy = 0.5
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingLight3" type="Node2D" parent="Lighting/LightSources" unique_id=962128348]
+position = Vector2(407, -32)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingLight3" unique_id=1554901572]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(64, 144, 248, 96)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingLight3" unique_id=685695815]
+position = Vector2(698.49994, 390.37653)
+scale = Vector2(1.6452651, 1.102509)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingLight4" type="Node2D" parent="Lighting/LightSources" unique_id=1232647771]
+position = Vector2(420, 288)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingLight4" unique_id=366830458]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(64, 144, 248, 96)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingLight4" unique_id=1978743553]
+position = Vector2(698.49994, 447.37653)
+scale = Vector2(1.6452651, 2.005122)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingLight5" type="Node2D" parent="Lighting/LightSources" unique_id=376667719]
+position = Vector2(-92, 352)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingLight5" unique_id=125097532]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(64, 144, 248, 96)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingLight5" unique_id=1848326875]
+position = Vector2(699.5, 482.37656)
+scale = Vector2(1.7094702, 2.5593584)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingLight6" type="Node2D" parent="Lighting/LightSources" unique_id=1265729271]
+position = Vector2(1177, -64)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingLight6" unique_id=1231502250]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(64, 144, 248, 96)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingLight6" unique_id=1168043764]
+position = Vector2(698.49994, 447.37656)
+scale = Vector2(1.6452651, 2.0051224)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingBulb" type="Node2D" parent="Lighting/LightSources" unique_id=1978806746]
+position = Vector2(584, -377)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingBulb" unique_id=738860954]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(1016, 56, 112, 136)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingBulb" unique_id=88737672]
+position = Vector2(698.00006, 388)
+scale = Vector2(0.58587474, 0.93428344)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingBulb2" type="Node2D" parent="Lighting/LightSources" unique_id=582977030]
+position = Vector2(349, -377)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingBulb2" unique_id=1617019660]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(1016, 56, 112, 136)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingBulb2" unique_id=1117546839]
+position = Vector2(698.00006, 388)
+scale = Vector2(0.58587474, 0.93428344)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="CeilingBulb3" type="Node2D" parent="Lighting/LightSources" unique_id=1425546704]
+position = Vector2(94, -377)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/CeilingBulb3" unique_id=2017238947]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(1016, 56, 112, 136)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/CeilingBulb3" unique_id=1108174723]
+position = Vector2(698.00006, 388)
+scale = Vector2(0.58587474, 0.93428344)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 57.5
+texture = ExtResource("14_pdd0t")
+texture_scale = 0.1
+
+[node name="FloorLight" type="Node2D" parent="Lighting/LightSources" unique_id=338529901]
+position = Vector2(1259, 413)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight" unique_id=328142411]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight" unique_id=1662765970]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="FloorLight2" type="Node2D" parent="Lighting/LightSources" unique_id=1516642183]
+position = Vector2(1004, 285)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight2" unique_id=1514894594]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight2" unique_id=758462699]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="FloorLight3" type="Node2D" parent="Lighting/LightSources" unique_id=1789269202]
+position = Vector2(196, 93)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight3" unique_id=146323193]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight3" unique_id=347114508]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="FloorLight4" type="Node2D" parent="Lighting/LightSources" unique_id=2035704129]
+position = Vector2(215, -163)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight4" unique_id=1445568455]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight4" unique_id=213665474]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="FloorLight5" type="Node2D" parent="Lighting/LightSources" unique_id=343959828]
+position = Vector2(1043, -131)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight5" unique_id=1060412238]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight5" unique_id=1391620014]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="FloorLight6" type="Node2D" parent="Lighting/LightSources" unique_id=595896429]
+position = Vector2(147, 573)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight6" unique_id=1785875555]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight6" unique_id=1844341652]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="FloorLight7" type="Node2D" parent="Lighting/LightSources" unique_id=129808349]
+position = Vector2(31, 285)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/FloorLight7" unique_id=355764576]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.385, -0.385)
+texture = ExtResource("13_84fye")
+region_enabled = true
+region_rect = Rect2(612, 312, 120, 88)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/FloorLight7" unique_id=2088283991]
+position = Vector2(696, 325.99982)
+scale = Vector2(6.055, 4.625)
+color = Color(1.8247963, 1.803834, 1.1050899, 0.80784315)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 2
+shadow_filter_smooth = 28.9
+texture = SubResource("GradientTexture2D_yhsp1")
+texture_scale = 0.1
+
+[node name="WallLightRed" type="Node2D" parent="Lighting/LightSources" unique_id=1616497751]
+position = Vector2(1061, 381)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/WallLightRed" unique_id=205441692]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.23, -0.23)
+texture = ExtResource("15_pdd0t")
+region_enabled = true
+region_rect = Rect2(184, 500, 136, 156)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/WallLightRed" unique_id=1575953206]
+position = Vector2(699, 340)
+scale = Vector2(5.385, 8.1)
+color = Color(1.112, 0.634, 0, 1)
+energy = 1.2
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_iq3jk")
+texture_scale = 0.2
+
+[node name="WallLightRed3" type="Node2D" parent="Lighting/LightSources" unique_id=406364090]
+position = Vector2(677, 524)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/WallLightRed3" unique_id=1100775363]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.23, -0.23)
+texture = ExtResource("15_pdd0t")
+region_enabled = true
+region_rect = Rect2(184, 500, 136, 156)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/WallLightRed3" unique_id=1823129994]
+position = Vector2(699, 340)
+scale = Vector2(5.385, 8.1)
+color = Color(1.112, 0.634, 0, 1)
+energy = 1.2
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_iq3jk")
+texture_scale = 0.2
+
+[node name="WallLightRed4" type="Node2D" parent="Lighting/LightSources" unique_id=865205696]
+position = Vector2(1157, -164)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/WallLightRed4" unique_id=1564477642]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.23, -0.23)
+texture = ExtResource("15_pdd0t")
+region_enabled = true
+region_rect = Rect2(184, 500, 136, 156)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/WallLightRed4" unique_id=529274072]
+position = Vector2(699, 340)
+scale = Vector2(5.385, 8.1)
+color = Color(1.112, 0.634, 0, 1)
+energy = 1.2
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_iq3jk")
+texture_scale = 0.2
+
+[node name="WallLightRed2" type="Node2D" parent="Lighting/LightSources" unique_id=1966589770]
+position = Vector2(856, 381)
+
+[node name="AssemblyFloorLights" type="Sprite2D" parent="Lighting/LightSources/WallLightRed2" unique_id=1821352630]
+position = Vector2(698.00006, 339.00003)
+scale = Vector2(-0.23, -0.23)
+texture = ExtResource("15_pdd0t")
+region_enabled = true
+region_rect = Rect2(184, 500, 136, 156)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lighting/LightSources/WallLightRed2" unique_id=1760082781]
+position = Vector2(699, 340)
+scale = Vector2(5.385, 8.1)
+color = Color(1.112, 0.634, 0, 1)
+energy = 1.2
+range_item_cull_mask = 3
+texture = SubResource("GradientTexture2D_iq3jk")
+texture_scale = 0.2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1967953741]
+light_mask = 9
+position = Vector2(597, 913)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3y0ih")
+autoplay = "default"
+frame_progress = 0.7662079
+
+[node name="player" parent="." unique_id=1760406672 instance=ExtResource("8_7ht22")]
+position = Vector2(180, 531)
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=76565079]
+position = Vector2(0, -34)
+zoom = Vector2(3, 3)
+limit_left = 21
+limit_top = 28
+limit_right = 2005
+limit_bottom = 1084
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0

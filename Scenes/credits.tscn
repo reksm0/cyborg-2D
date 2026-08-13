@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://d2mry044wdxjl"]
+[gd_scene format=3 uid="uid://d2uc01wapl6lo"]
 
-[ext_resource type="Script" uid="uid://8roreto354di" path="res://Scenes/credits.gd" id="1_gryuy"]
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_gryuy"]
 [ext_resource type="Texture2D" uid="uid://ds5xgirobnsaj" path="res://Assets/manami's assets/background/bg cyborg.png" id="1_r18jl"]
 
 [node name="Credits_tscn" type="CanvasLayer" unique_id=1320445247]
@@ -10,3 +10,11 @@ script = ExtResource("1_gryuy")
 offset_right = 1919.0
 offset_bottom = 1078.0
 texture = ExtResource("1_r18jl")
+
+[node name="Label" type="Label" parent="." unique_id=1705591243]
+offset_left = 94.0
+offset_top = 105.0
+offset_right = 386.0
+offset_bottom = 174.0
+theme_override_font_sizes/font_size = 44
+text = "esc to close"

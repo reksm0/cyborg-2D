@@ -85,6 +85,14 @@ text = "??????????????"
 icon = ExtResource("5_unmej")
 expand_icon = true
 
+[node name="Label" type="Label" parent="." unique_id=119115622]
+offset_left = 1098.0
+offset_top = 850.0
+offset_right = 1303.0
+offset_bottom = 890.0
+theme_override_font_sizes/font_size = 36
+text = "esc to close"
+
 [connection signal="pressed" from="Floor List/Development Wing" to="." method="_on_development_wing_pressed"]
 [connection signal="pressed" from="Floor List/Assembly Wing" to="." method="_on_assembly_wing_pressed"]
 [connection signal="pressed" from="Floor List/Testing Wing" to="." method="_on_testing_wing_pressed"]
