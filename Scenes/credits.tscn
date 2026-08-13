@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d2mry044wdxjl"]
+
+[ext_resource type="Script" uid="uid://8roreto354di" path="res://Scenes/credits.gd" id="1_gryuy"]
+[ext_resource type="Texture2D" uid="uid://ds5xgirobnsaj" path="res://Assets/manami's assets/background/bg cyborg.png" id="1_r18jl"]
+
+[node name="Credits_tscn" type="CanvasLayer" unique_id=1320445247]
+script = ExtResource("1_gryuy")
+
+[node name="Background" type="TextureRect" parent="." unique_id=464306827]
+offset_right = 1919.0
+offset_bottom = 1078.0
+texture = ExtResource("1_r18jl")

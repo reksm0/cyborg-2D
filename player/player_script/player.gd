@@ -12,6 +12,7 @@ var max_health := 0
 var health := 0
 var is_attacking := false
 var controls_enabled := true
+var is_dead := false
 
 func _ready():
 	health = GameState.player_health
@@ -19,6 +20,8 @@ func _ready():
 	
 	add_to_group("player")
 	Global.playerBody = self
+	
+	PlayerHud.update_health_bar(health, max_health)
 	
 func _physics_process(delta: float) -> void:
 	
@@ -96,16 +99,43 @@ func update_animations(input_axis: float) -> void:
 
 
 func take_damage(amount: int, attacker_pos: Vector2) -> void:
+	if is_dead:
+		return
+
 	health -= amount
+	health = clamp(health, 0, max_health)
+
 	GameState.player_health = health
-	
+
+	PlayerHud.update_health_bar(health, max_health)
+
 	var dir = sign(global_position.x - attacker_pos.x)
-	
-	# Knockback
+
 	velocity = Vector2(dir * 450, -300)
+
 	if health <= 0:
 		die()
 
 
 func die() -> void:
-	queue_free()
+	if is_dead:
+		return
+
+	is_dead = true
+	controls_enabled = false
+	velocity = Vector2.ZERO
+
+	# Make player invisible
+	visible = false
+
+	# Disable collision
+	collision_shape_2d.disabled = true
+
+	# Wait before restarting
+	await get_tree().create_timer(1.5).timeout
+
+	# Reset health
+	GameState.player_health = GameState.player_max_health
+
+	# Go back to Awakening Lab
+	get_tree().change_scene_to_file("res://Scenes/rooms/awakening_lab.tscn")
